@@ -1,0 +1,35 @@
+package day_1_hcl;
+
+class Employee {
+	int id;
+	String name;
+	double salary;
+	
+	public Employee(int id, String name, double salary) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+
+	public void increment(double percentage) {
+		salary = salary + salary * percentage;
+	}
+	
+	public void print() {
+		System.out.println(id + " "+ name + " " + salary);
+	}
+	
+}
+
+public class DemoAbstractionAndEncapInRealLife {
+	
+	public static void main(String[] args) {
+		Employee emp = new Employee(121, "divya", 3000);
+		emp.print();
+		emp.increment(0.2);
+		emp.print();
+				
+	}
+	
+	
+}

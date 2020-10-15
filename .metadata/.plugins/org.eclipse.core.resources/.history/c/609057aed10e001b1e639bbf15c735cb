@@ -1,0 +1,9 @@
+package day_1_hcl;
+
+public class DemoConstructorChaining {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

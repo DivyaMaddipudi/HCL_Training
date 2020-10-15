@@ -1,0 +1,22 @@
+package day_1_hcl;
+
+class Account {
+	private int id;
+	private String name;
+	
+	Account() {
+		
+	}
+	
+	Account(int id, String name) {
+		
+	}
+}
+
+public class DemoConstructorChaining {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,41 @@
+package day_1_hcl;
+
+public class PrintNextDate {
+	
+	public static boolean isLeapYear(int year) {
+		
+		boolean isLeapYear = false;
+		if((year % 4 == 0) || (year%100 != 0) && (year%4 == 0))  {
+			isLeapYear = true;
+		}
+		return isLeapYear;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		int date = 10;
+		int month = 12;
+		int year = 2020;
+		
+		int monthsArr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+		if(monthsArr[month] == 1 || monthsArr[month] == 3 || monthsArr[month] == 5 || monthsArr[month] == 7 || monthsArr[month] == 8 || monthsArr[month] == 10 || monthsArr[month] == 12) {
+			if( date <= 31 ) {
+				date = date + 1;
+			} else {
+				if(month <=31) {
+					
+				}
+				date = (date%31) + date;
+				
+			}
+		}
+		
+		
+		
+		
+		
+	}
+
+}

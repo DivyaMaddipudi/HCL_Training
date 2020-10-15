@@ -1,0 +1,18 @@
+package day_1_hcl;
+
+public class PrintNextDate {
+	
+	public static boolean isLeapYear(int year) {
+		
+		if(year)
+	}
+	
+	public static void main(String[] args) {
+		
+		String date = "10/1/2020";
+		
+		
+		
+	}
+
+}

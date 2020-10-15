@@ -1,0 +1,29 @@
+package day_1_hcl;
+
+class Player {
+	private int id;
+	private String name;
+	private int rank;
+	
+	private static int playerCounter;
+
+	public Player(int id, String name, int rank) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.rank = rank;
+	}
+	
+	public void printPlayer() {
+		System.out.println("Player details " + id + " " + name + " " + rank);
+	}
+}
+
+
+
+public class DemoPlayerStatic {
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,19 @@
+package day_1_hcl;
+
+import java.util.Scanner;
+
+public class DemoPrime {
+	
+	public static void main(String[] args) {
+		//Check for prime number
+		//1. take the value from the user
+		
+		System.out.println("Plz enter some number:");
+		Scanner scanner = new Scanner(System.in);
+		int number = scanner.nextInt();
+		
+		boolean isPrime = false;
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package day_1_hcl;
+
+class Player {
+	private int id;
+	private String name;
+	private int rank;
+}
+
+public class DemoPlayerStatic {
+	
+	public static void main(String[] args) {
+		
+	}
+}

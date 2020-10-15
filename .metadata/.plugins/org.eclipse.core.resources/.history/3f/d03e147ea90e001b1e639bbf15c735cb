@@ -1,0 +1,46 @@
+package day_1_hcl;
+
+import java.util.Scanner;
+
+public class DemoPrime {
+
+	public static boolean primeChecker(int number) {
+		if (number <= 1) {
+			return false;
+		}
+		boolean isPrime = true; // let assume num is a prime num
+
+		for (int i = 4; i <= 34; i++) {
+			for (int j = 1; j < i; j++) {
+				if (number % j == 0) {
+					isPrime = false;
+					System.out.println(i);
+					break;
+				}
+			}
+			
+		}
+		return isPrime;
+	}
+
+	public static void main(String[] args) {
+
+		// modularity: functions
+
+		// Check for prime number
+		// 1. take the value from the user
+
+		System.out.println("Plz enter some number:");
+		Scanner scanner = new Scanner(System.in);
+		int start = scanner.nextInt();
+		int end = scanner.nextInt();
+
+		if (primeChecker(number)) {
+			System.out.println("It is a prime num");
+		} else {
+			System.out.println("It is not a prime num");
+		}
+
+	}
+
+}

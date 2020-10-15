@@ -1,0 +1,16 @@
+package lab_assignment_1;
+
+public class Lab1_Q4 {
+	
+	public static void main(String[] args) {
+		
+		int orgArr[] = {1,2,3};
+		
+	}
+	
+	
+	public static int[] copyOf(int[] array) {
+		
+	}
+
+}
