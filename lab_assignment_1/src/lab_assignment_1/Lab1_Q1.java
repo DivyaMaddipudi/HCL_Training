@@ -26,9 +26,6 @@ public class Lab1_Q1 {
 		}
 		System.out.println(sum);
 		System.out.println(sum/20);
-		
-		
-		
 	}
 
 }
