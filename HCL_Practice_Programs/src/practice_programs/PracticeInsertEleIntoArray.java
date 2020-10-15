@@ -1,6 +1,6 @@
 /*
  * 
- * Insert element into an array
+ * Insert element into an array at specified position
  * 
  */
 package practice_programs;
