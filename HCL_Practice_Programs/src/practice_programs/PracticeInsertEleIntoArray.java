@@ -17,7 +17,6 @@ public class PracticeInsertEleIntoArray {
 		Scanner sc = new Scanner(System.in);
 		int index = sc.nextInt();
 		int ele = sc.nextInt();
-		int temp =0;
 		
 		for(int i=0;i<newArr.length;i++) {
 			
