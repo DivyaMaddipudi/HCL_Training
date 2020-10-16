@@ -1,5 +1,7 @@
 package day_1_hcl;
 
+import java.util.Scanner;
+
 public class PrintNextDate {
 	
 	public static boolean isLeapYear(int year) {
@@ -15,11 +17,16 @@ public class PrintNextDate {
 	
 	public static void main(String[] args) {
 		
-		int date = 31;
-		int month = 11;
-		int year = 2020;
+		Scanner sc = new Scanner(System.in);
+		int date = sc.nextInt();
+		int month = sc.nextInt();
+		int year = sc.nextInt();
 		
+		System.out.println(date+"/"+month +"/"+year);
+		
+		//0 indicate invalidate month
 		int monthsArr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+
 		if(isLeapYear(year)) {
 			if(monthsArr[month] == 1 || monthsArr[month] == 3 || monthsArr[month] == 5 || monthsArr[month] == 7 || monthsArr[month] == 8 || monthsArr[month] == 10 || monthsArr[month] == 12) {
 				if( date < 31 ) {
