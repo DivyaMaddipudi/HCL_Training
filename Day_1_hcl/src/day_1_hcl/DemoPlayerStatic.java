@@ -35,8 +35,8 @@ public class DemoPlayerStatic {
 		Player player1 = new Player("dhoni", 102);
 		Player player2 = new Player("kohli", 103);
 		System.out.println(player.getCounter());
-		System.out.println(player.getCounter());
-		System.out.println(player.getCounter());
+		System.out.println(player1.getCounter());
+		System.out.println(player2.getCounter());
 		
 	}
 }
