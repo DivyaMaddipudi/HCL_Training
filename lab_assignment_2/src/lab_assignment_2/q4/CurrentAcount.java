@@ -1,4 +1,4 @@
-package lab_assignment.q4;
+package lab_assignment_2.q4;
 
 public class CurrentAcount extends Account {
 	private int tradeLicenseNumber;
