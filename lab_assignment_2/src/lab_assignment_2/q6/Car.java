@@ -24,7 +24,7 @@ public class Car extends Vehicle{
 	}
 	
 	public int getNumOfDoors() {
-		return this.numOfDoors;
+		return numOfDoors;
 	}
 	
 	public void setNumOfDoors(int numOfDoors) {
