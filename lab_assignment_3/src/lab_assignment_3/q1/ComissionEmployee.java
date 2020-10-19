@@ -16,4 +16,9 @@ public class ComissionEmployee extends Employee implements IncreaseSalary{
 		return (perecentage*weeklySale)/100;
 	}
 
+	@Override
+	public int increaseSalary() {
+		return 3;
+	}
+
 }

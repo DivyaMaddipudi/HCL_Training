@@ -1,6 +1,6 @@
 package lab_assignment_3.q1;
 
-public class HourlyEmployee extends Employee {
+public class HourlyEmployee extends Employee implements IncreaseSalary {
 	
 	private int salaryPerHour;
 	private int numOfHours;
@@ -15,6 +15,12 @@ public class HourlyEmployee extends Employee {
 	public int getSalary() {
 		System.out.println("Hourly employee ");		
 		return salaryPerHour * numOfHours;
+	}
+
+	@Override
+	public int increaseSalary() {
+		
+		return 3;
 	}
 
 }
