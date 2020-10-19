@@ -2,7 +2,8 @@ HCL Java
 
 Sources:
 https://www3.ntu.edu.sg/home/ehchua/programming/java/J3f_OOPExercises.html#zz-1.1
-
+https://www3.ntu.edu.sg/home/ehchua/programming/java/J2a_BasicsExercises.html
+https://b-ok.asia/s/thinking%20in%20java
 
 Errors:
 

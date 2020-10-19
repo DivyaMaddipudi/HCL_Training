@@ -1,5 +1,5 @@
 /*
- * Q4. Write a boolean method called copyOf(), which an int Array and returns a copy of the given array. 
+ * Q4. Write a method called copyOf(), which an int Array and returns a copy of the given array. 
  * The method's signature is as follows:
  * 
  */
