@@ -23,4 +23,9 @@ public class HourlyEmployee extends Employee implements IncreaseSalary {
 		return 3;
 	}
 
+	@Override
+	public double getPayment() {
+		return salaryPerHour * numOfHours;
+	}
+
 }

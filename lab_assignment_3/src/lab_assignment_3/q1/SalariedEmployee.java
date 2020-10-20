@@ -18,4 +18,16 @@ public class SalariedEmployee extends Employee implements IncreaseSalary{
 	public int increaseSalary() {
 		return 5;
 	}
+	
+
+	@Override
+	public String toString() {
+		return "SalariedEmployee [salary=" + salary + "]";
+	}
+
+	@Override
+	public double getPayment() {
+		System.out.println(this.toString());
+		return salary;
+	}
 }

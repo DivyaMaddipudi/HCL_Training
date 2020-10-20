@@ -1,6 +1,8 @@
 package lab_assignment_3.q1;
 
-abstract class Employee{
+import lab_assignment_3.q2.Payable;
+
+abstract class Employee implements Payable{
 	
 	private int rate;
 	
