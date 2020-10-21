@@ -5,9 +5,12 @@ import java.util.Random;
 
 
 class A {
+	
 	{
 		System.out.println("init block");
 	}
+	
+	
 }
 public class DemoOnStaticBlock {
 	

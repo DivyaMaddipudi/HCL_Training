@@ -11,8 +11,9 @@ https://www.java67.com/2013/07/15-java-enum-interview-questions-amswers-for-expe
 Immutabiliy of class
 https://stackoverflow.com/questions/20768943/how-to-create-immutable-class-in-java/20768954
 
-Exception
+Exceptions
 http://tutorials.jenkov.com/java-exception-handling/exception-wrapping.html
+https://www.journaldev.com/1696/exception-handling-in-java
 
 Errors:
 
