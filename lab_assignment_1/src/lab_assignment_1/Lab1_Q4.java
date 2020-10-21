@@ -22,7 +22,6 @@ public class Lab1_Q4 {
 	
 	public static int[] copyOf(int[] array) {
 		int copyArr[] = Arrays.copyOf(array, array.length);
-		
 		return copyArr;
 	}
 

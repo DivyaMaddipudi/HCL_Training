@@ -4,6 +4,12 @@ Sources:
 https://www3.ntu.edu.sg/home/ehchua/programming/java/J3f_OOPExercises.html#zz-1.1
 https://www3.ntu.edu.sg/home/ehchua/programming/java/J2a_BasicsExercises.html
 https://b-ok.asia/s/thinking%20in%20java
+https://www.pdfdrive.com/javaj2ee-job-interview-companion-e1709807.html  - by arulkurmar 
+
+https://www.java67.com/2013/07/15-java-enum-interview-questions-amswers-for-experienced-programmers.html
+
+Immutabiliy of class
+https://stackoverflow.com/questions/20768943/how-to-create-immutable-class-in-java/20768954
 
 Errors:
 
