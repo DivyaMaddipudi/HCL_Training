@@ -5,56 +5,46 @@ import java.util.Map.Entry;
 
 public class HashMapExample {
 	public static void main(String[] args) {
-		System.out.println(args.length);
-		Map<String, Integer> map = new LinkedHashMap<>();
-		Map<String, Integer> map1 = new LinkedHashMap<>();
-		
-		map.put("apple", 5);
-		map.put("mango", 6);
-		map.put("apple", 2);
-		map.put("mango", 3);
-		map.put("banana", 7);
-		
-		List<String> stringList = new ArrayList(map.keySet());
-		List<String> valuesList = new ArrayList(map.values());
-		
-		
-		for(int i=0;i<stringList.size();i++) {
-			
-			System.out.println(stringList.get(i));
-//			if(map1.containsKey(stringList[i])) {
-				
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		int sum = 0;
-//		Set<Entry<String, Integer>> entrySet = map.entrySet();
-//		for (Entry<String, Integer> fruit : entrySet) {
-//			System.out.println(fruit.getKey() + " : " + fruit.getValue());
-//			if (map1.containsKey(fruit.getKey())) {
-//				Set<Entry<String, Integer>> entrySet1 = map.entrySet();
-//				for (Entry<String, Integer> fruit1 : entrySet) {
-//					sum = fruit1.getValue() + fruit.getValue();
-//					System.out.println(sum);
-//					 map1.put(fruit.getKey(), sum);
-//				}
-//			} else {
-//				map1.put(fruit.getKey(), fruit.getValue());
-//				System.out.println(fruit.getKey());
-//				System.out.println(fruit.getValue());
-//			}
-		}
-		
-//		Set<Entry<String, Integer>> entrySet2 = map1.entrySet();
-//		for(Entry<String, Integer> res : entrySet2) {
-//			System.out.println(res.getKey() + " : " + res.getValue());
-//		}
-	}
 
+		Map<String, Integer> hMap = new HashMap<>();
+		List<String> fruitArr = new ArrayList<>();
+		List<Integer> quantityArr = new ArrayList<>();
+
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Enter size");
+			int size = sc.nextInt();
+			for (int i = 0; i < size; i++) {
+				System.out.println("Fruit name: ");
+				String fruitName = sc.next();
+				fruitArr.add(fruitName);
+				System.out.println("Enter quantity: ");
+				int quantity = sc.nextInt();
+				quantityArr.add(quantity);
+
+			}
+
+		}
+
+		for (int i = 0; i < fruitArr.size(); i++) {
+			
+			if(hMap.containsKey(fruitArr.get(i))) {
+				int value =  quantityArr.get(i)+ hMap.get(fruitArr.get(i));
+				System.out.println();
+				hMap.put(fruitArr.get(i), value);
+			} else {
+				hMap.put(fruitArr.get(i), quantityArr.get(i));
+			}
+		}
+		
+		System.out.println("fruits and initial quantity");
+		for (int i = 0; i < fruitArr.size(); i++) {
+			System.out.println(fruitArr.get(i) + " = " + quantityArr.get(i));
+		}
+		
+		System.out.println("final quantity of all fruits!");
+		Set<Entry<String, Integer>> totalSumOfFruits = hMap.entrySet();
+		for(Entry<String, Integer> fruitsSum : totalSumOfFruits) {
+			System.out.println(fruitsSum.getKey() + " = " + fruitsSum.getValue());
+		}
+	}
+}
