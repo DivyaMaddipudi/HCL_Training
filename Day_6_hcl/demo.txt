@@ -1,0 +1,4 @@
+apple=4
+mango=2
+apple=4
+mago=5

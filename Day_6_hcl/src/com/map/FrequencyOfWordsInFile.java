@@ -12,6 +12,7 @@ public class FrequencyOfWordsInFile {
 	public static void main(String[] args) {
 		Map<String, Integer> hMap = new HashMap<String, Integer>();
 		try {
+//			BufferedReader br = new BufferedReader(new FileReader("E:\\HCL Training\\error_archive.txt"));
 			BufferedReader br = new BufferedReader(new FileReader(new File("data.txt")));
 			String line = null;
 			while((line = br.readLine()) != null) {
