@@ -14,12 +14,18 @@ class 	Acc {
 		this.id = id;
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "Acc [id=" + id + ", name=" + name + "]";
+	}
 }
 
 public class DemoConstructorChaining {
 	
 	public static void main(String[] args) {
-		
+		Acc acc = new Acc();
+		System.out.println(acc);
 	}
 
 }

@@ -1,0 +1,6 @@
+apple=10
+mango=5
+apple=3
+mango=5
+banana=2
+banana=15

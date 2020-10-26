@@ -19,9 +19,9 @@ public class example {
 	public static void main(String[] args) {
 		
 //		System.out.println(args[0]);
-//		Calculator cal = new SciCal();
-//		System.out.println(cal.cal(10, 20));
-		System.gc();
+		Calculator cal = new SciCal();
+		System.out.println(cal.cal(10, 20));
+//		System.gc();
 	}
 
 }
