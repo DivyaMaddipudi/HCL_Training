@@ -22,10 +22,10 @@ class Printer {
 }
 
 class Client implements Runnable{
-	private Printer printer;
+	private Printer1 printer;
 	private Thread thread;
 	private String letter;
-	public Client(Printer printer, String letter) {
+	public Client(Printer1 printer, String letter) {
 		this.printer = printer;
 		this.letter = letter;
 		this.thread = new Thread(this);
@@ -41,7 +41,7 @@ class Client implements Runnable{
 }
 public class NeedForSynchronization {
 	public static void main(String[] args) {
-		Printer printer = new Printer();
+		Printer1 printer = new Printer1();
 		Client client1 = new Client(printer, "i love java");
 		Client client2 = new Client(printer, "#$%%#@");
 		Client client3 = new Client(printer, "i love python");

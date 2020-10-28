@@ -10,7 +10,7 @@ class Cal implements Runnable {
 	private int x;
 	private int y;
 	private int sum = 0;
-	
+	private boolean isDone = false;
 	
 	public Cal(int x, int y) {
 		this.x = x;
@@ -19,11 +19,24 @@ class Cal implements Runnable {
 
 	@Override
 	public void run() {
-		sum = x + y;		
+		sum = x + y;
+		isDone = true;
+		synchronized (this) {
+			notify();
+		}
 	}
 	
 	public int getRes() {
-//		this.sum = sum;
+		if(!isDone) {
+			synchronized (this) {
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
+			}
+		}
 		return sum;
 		
 	}
@@ -35,19 +48,19 @@ public class HowToReturnProcessingValueFromAThread {
 		Cal cal = new Cal(5, 3);
 		Thread thread = new Thread(cal);
 		thread.start();
-//		thread.run();
 		
-	    ExecutorService executor = Executors.newSingleThreadExecutor();
-	    Callable<Integer> callable = new Callable<Integer>() {
-
-			@Override
-			public Integer call() throws Exception {
-				return 10;
-			}
-	        
-	    };
-	    Future<Integer> future = executor.submit(callable);
-	    executor.shutdown();
+//	    ExecutorService executor = Executors.newSingleThreadExecutor();
+//	    Callable<Integer> callable = new Callable<Integer>() {
+//
+//			@Override
+//			public Integer call() throws Exception {
+//				return 10;
+//			}
+//	        
+//	    };
+//	    Future<Integer> future = executor.submit(callable);
+//	    executor.shutdown();
+	    
 		System.out.println(cal.getRes());
 		
 	}
