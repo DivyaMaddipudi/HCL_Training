@@ -21,8 +21,5 @@ public class Tester1 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
 }

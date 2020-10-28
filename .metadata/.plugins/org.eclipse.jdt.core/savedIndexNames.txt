@@ -6,7 +6,6 @@ INDEX VERSION 1.131+E:\HCL Training\.metadata\.plugins\org.eclipse.jdt.core
 157641390.index
 362459256.index
 1983853876.index
-2031066657.index
 2863271449.index
 687512008.index
 1118881587.index
