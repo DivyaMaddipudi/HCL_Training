@@ -18,4 +18,8 @@ https://www.journaldev.com/1696/exception-handling-in-java
 Errors:
 
 -----------
+Exception in thread "main" java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(Unknown Source)
+
+reason: because file is empty
 
