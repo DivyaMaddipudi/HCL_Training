@@ -7,34 +7,31 @@ public class Tester4 {
 
 	public static void main(String[] args) {
 
-		try (Scanner sc = new Scanner(System.in)) {
+		Scanner sc = new Scanner(System.in);
 
-//			System.out.println("PE a number or -1 if you want to quit");
-			int num = -1;
+		int num = 0;
+		try {
 
 			do {
-				System.out.println("PE a number or -1 if you want to quit");
-				try {
-					
-					num = sc.nextInt();
-
-					evenOdd(num);
-
-				} catch (InputMismatchException e) {
-					e.getMessage();
-				}
+				System.out.println("PE a number or -1 to quit");
+				num = sc.nextInt();
+				evenOdd(num);
 			} while (num != -1);
-
+			
+			
+		} catch (InputMismatchException e) {
+			System.out.println("you must enter an integer");
 		}
+		
 	}
 
 	private static void evenOdd(int num) {
-		if (num == -1) {
-			System.exit(0);
-		} else if (num % 2 == 0) {
+		if (num % 2 == 0) {
 			System.out.println("even");
-		} else if (num % 2 != 0) {
+		} else if(num%2!=0){
 			System.out.println("odd");
+		} else {
+			System.exit(0);
 		}
 	}
 }
