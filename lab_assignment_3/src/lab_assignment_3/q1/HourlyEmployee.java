@@ -20,7 +20,7 @@ public class HourlyEmployee extends Employee implements IncreaseSalary {
 	@Override
 	public int increaseSalary() {
 		
-		return 3;
+		return getRate()+3;
 	}
 
 	@Override

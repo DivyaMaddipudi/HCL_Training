@@ -13,7 +13,6 @@ public class BookStore {
 	}
 	
 	public BookStore(Book[] books) {
-		super();
 		this.books = books;
 	}
 

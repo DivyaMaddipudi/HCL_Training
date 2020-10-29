@@ -16,7 +16,7 @@ public class SalariedEmployee extends Employee implements IncreaseSalary{
 
 	@Override
 	public int increaseSalary() {
-		return 5;
+		return getRate()+2;
 	}
 	
 

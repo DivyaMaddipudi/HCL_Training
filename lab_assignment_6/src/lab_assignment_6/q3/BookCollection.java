@@ -9,12 +9,16 @@ public class BookCollection {
 	private String ownerName;
 	List<Book> bookList = new ArrayList<Book>();
 	
-	public boolean hasBook(Book book) {
+	public void hasBook(Book book) {
 		boolean hasBook = false;
 		if(bookList.contains(book)) {
 			hasBook = true;
 		}
-		return hasBook;
+		if(hasBook) {
+			System.out.println("book found");
+		} else {
+			System.out.println("not found");
+		}
 	}
 
 	public void sortByBookName() {

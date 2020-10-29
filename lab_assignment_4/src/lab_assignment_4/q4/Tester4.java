@@ -9,22 +9,32 @@ public class Tester4 {
 
 		try (Scanner sc = new Scanner(System.in)) {
 
-			System.out.println("PE a number or -1 if you want to quit");
+//			System.out.println("PE a number or -1 if you want to quit");
+			int num = -1;
 
-			try {
-				while (true) {
-					int num = sc.nextInt();
-					if (num == -1) {
-						System.exit(0);
-					} else if (num % 2 == 0) {
-						System.out.println("even");
-					} else {
-						System.out.println("odd");
-					}
+			do {
+				System.out.println("PE a number or -1 if you want to quit");
+				try {
+					
+					num = sc.nextInt();
+
+					evenOdd(num);
+
+				} catch (InputMismatchException e) {
+					e.getMessage();
 				}
-			} catch (InputMismatchException e) {
-				System.out.println("you must enter an integer");
-			}
+			} while (num != -1);
+
+		}
+	}
+
+	private static void evenOdd(int num) {
+		if (num == -1) {
+			System.exit(0);
+		} else if (num % 2 == 0) {
+			System.out.println("even");
+		} else if (num % 2 != 0) {
+			System.out.println("odd");
 		}
 	}
 }

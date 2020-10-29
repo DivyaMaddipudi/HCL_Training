@@ -18,7 +18,7 @@ public class ComissionEmployee extends Employee implements IncreaseSalary{
 
 	@Override
 	public int increaseSalary() {
-		return 3;
+		return getRate()+1;
 	}
 
 	@Override

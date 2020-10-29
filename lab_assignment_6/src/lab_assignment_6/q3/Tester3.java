@@ -26,7 +26,7 @@ public class Tester3 {
 		
 		//check whether book is there or not
 		Book bookUpdate = new Book("ikigai", "george");
-		System.out.println(bookCol.hasBook(bookUpdate));
+		bookCol.hasBook(bookUpdate);
 		
 		//sort
 		System.out.println("---------------after sorting by book title---------------");
