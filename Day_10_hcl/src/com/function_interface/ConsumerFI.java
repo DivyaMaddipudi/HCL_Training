@@ -29,14 +29,14 @@ public class ConsumerFI {
 		
 		
 			
-		Consumer<String> string = str -> System.out.println(str);
-		string.accept("Hello, java");
-		
-		Emp emp1 = new Emp(2, "ria", 50000, "IT");
-		System.out.println(emp1);
-		
-		Consumer<Emp> consumer = (emp) -> System.out.println(emp);
-		consumer.accept(emp1);
+//		Consumer<String> string = str -> System.out.println(str);
+//		string.accept("Hello, java");
+//		
+//		Emp emp1 = new Emp(2, "ria", 50000, "IT");
+//		System.out.println(emp1);
+//		
+//		Consumer<Emp> consumer = (emp) -> System.out.println(emp);
+//		consumer.accept(emp1);
 	}
 
 }

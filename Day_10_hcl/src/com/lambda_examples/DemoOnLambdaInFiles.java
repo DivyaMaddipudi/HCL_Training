@@ -6,7 +6,7 @@ public class DemoOnLambdaInFiles {
 	
 	public static void main(String[] args) {
 		
-		File dir = new File("E:\\HCL Training");
+		File dir = new File("E:\\HCL");
 		if(dir.isDirectory()) {
 			File[] files = dir.listFiles((fileName) ->fileName.isHidden());
 			
