@@ -15,7 +15,7 @@ class Producer implements Runnable {
 
 	@Override
 	public void run() {
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<100;i++) {
 			try {
 				System.out.println("produce: "+i);
 				sharedResource.put(i);
@@ -54,7 +54,7 @@ public class ProducerConsumerTester {
 	
 	public static void main(String[] args) {
 		
-		BlockingDeque<Integer> sharedQueue = new LinkedBlockingDeque<>(20);
+		BlockingDeque<Integer> sharedQueue = new LinkedBlockingDeque<>(5);
 		
 		Producer producer = new Producer(sharedQueue);
 		Consumer consumer = new Consumer(sharedQueue);
