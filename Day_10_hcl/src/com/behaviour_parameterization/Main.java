@@ -52,9 +52,7 @@ public class Main {
 		
 		Predicate<Apple> applesPredicate = Apple::isGreen;
 		//looking for all green apples
-		//apples -> list of apples
-//		List<Apple> apples2 = apples.stream().filter(apple -> apple.getColor().equals("green"))
-//								.collect(Collectors.toList());
+
 		
 		List<Apple> appleList = getAllApples();
 		

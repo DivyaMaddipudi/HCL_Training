@@ -25,7 +25,7 @@ public class ConsumerFI {
 		Consumer<String> c = name -> System.out.println(name);
 //		names.forEach(name -> System.out.println(name));
 //		names.forEach(c);
-		names.forEach(System.out::print);
+//		names.forEach(System.out::print);
 		
 		
 			
