@@ -11,8 +11,11 @@ import java.io.Serializable;
 class MyDemo implements Serializable{
 	private int i;
 
+	
+	public MyDemo() {
+	}
+
 	public MyDemo(int i) {
-		super();
 		this.i = i;
 	}
 	
@@ -21,8 +24,8 @@ class MyDemo implements Serializable{
 	}
 	
 	public Object readResolve() {
-		System.out.println("hey java call it but dont do der-ser");
-		return this;
+//		System.out.println("hey java call it but dont do der-ser");
+		return new MyDemo();
 	}
 	
 }
@@ -31,11 +34,11 @@ public class DemoReadResolve {
 		
 		
 		
-		MyDemo myDemo = new MyDemo(22);
+		MyDemo myDemo = new MyDemo(23);
 		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("resolver.ser"));
 		System.out.println(myDemo.hashCode());
 		oos.writeObject(myDemo);
-		System.out.println("done!!");
+		System.out.println("ser done!!");
 		
 		//de- ser
 		
@@ -46,7 +49,7 @@ public class DemoReadResolve {
 		System.out.println(myDemo1.hashCode());
 		System.out.println("done de-ser");
 		
-		if(myDemo.equals(myDemo1)) {
+		if(myDemo == (myDemo1)) {
 			System.out.println("same");
 		} else {
 			System.out.println("not same");

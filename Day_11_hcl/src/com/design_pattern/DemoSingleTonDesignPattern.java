@@ -9,16 +9,21 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-class Singleton implements Serializable{
+class Singleton implements Serializable, Cloneable{
+	
+	//eager initialization
 	private static Singleton singleton = new Singleton();
+	
 	private Singleton() {}
 	public static Singleton getSingleton() {
 		return singleton;
 	}
 	
+	
+	
 	//this is special method : i expect java to call this whenever somebody
 	private Object readResolve() {
-		return this;
+		return singleton;
 	}
 }
 public class DemoSingleTonDesignPattern {
@@ -30,11 +35,11 @@ public class DemoSingleTonDesignPattern {
 		
 		//de -ser
 		
-//		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("data.ser")));
-//		Singleton singleton2 = ois.readObject(singleton);
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("data.ser")));
+		Singleton singleton2 = (Singleton) ois.readObject();
 		
 		System.out.println(singleton.hashCode());
-		System.out.println(singleton.hashCode());
+		System.out.println(singleton2.hashCode());
 		
 	}
 }

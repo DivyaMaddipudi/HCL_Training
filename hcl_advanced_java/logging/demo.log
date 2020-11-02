@@ -1,0 +1,4 @@
+INFO 02-November-20 04:31:17 129 com.logging.DemoLogging main this is info msg com.logging.DemoLogging.main(DemoLogging.java:27) 
+ERROR 02-November-20 04:31:17 133 com.logging.DemoLogging main this is error msg com.logging.DemoLogging.main(DemoLogging.java:28) 
+DEBUG 02-November-20 04:31:17 133 com.logging.DemoLogging main this is debug msg com.logging.DemoLogging.main(DemoLogging.java:29) 
+FATAL 02-November-20 04:31:17 134 com.logging.DemoLogging main this is fatal msg com.logging.DemoLogging.main(DemoLogging.java:30) 
