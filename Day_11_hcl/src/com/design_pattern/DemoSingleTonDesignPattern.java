@@ -29,6 +29,7 @@ class Singleton implements Serializable, Cloneable{
 public class DemoSingleTonDesignPattern {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+		
 		Singleton singleton = Singleton.getSingleton();
 		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("data.ser")));
 		oos.writeObject(singleton);
