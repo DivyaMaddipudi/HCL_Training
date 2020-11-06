@@ -1,9 +1,10 @@
 package books.service;
 
 import java.util.List;
+import java.util.Optional;
 
+import book.exception.DaoException;
 import books.dao.BookDaoImpl;
-import books.dao.DaoException;
 import books.model.Book;
 
 public class BookServiceImpl implements BookService{
@@ -32,7 +33,7 @@ public class BookServiceImpl implements BookService{
 		
 	}
 	@Override
-	public Book getBookById(int id) throws DaoException {
+	public Optional<Book> getBookById(int id) throws DaoException {
 		return bookDao.getBookById(id);
 	}
 }

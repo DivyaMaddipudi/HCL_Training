@@ -1,8 +1,9 @@
 package books.service;
 
 import java.util.List;
+import java.util.Optional;
 
-import books.dao.DaoException;
+import book.exception.DaoException;
 import books.model.Book;
 
 interface BookService {
@@ -11,6 +12,6 @@ interface BookService {
 	public Book addBook(Book book)throws DaoException;
 	public void deleteBook(int id) throws DaoException;
 	public void updateBook(int id, Book book) throws DaoException;
-	public Book getBookById(int id) throws DaoException;
+	public Optional<Book> getBookById(int id) throws DaoException;
 
 }

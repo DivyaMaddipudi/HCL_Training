@@ -1,7 +1,9 @@
 package books.dao;
 
 import java.util.List;
+import java.util.Optional;
 
+import book.exception.DaoException;
 import books.model.Book;
 
 interface BookDao {
@@ -10,6 +12,6 @@ interface BookDao {
 	public Book addBook(Book book) throws DaoException;
 	public void deleteBook(int id) throws DaoException;
 	public void updateBook(int id, Book book) throws DaoException;
-	public Book getBookById(int id) throws DaoException;
+	public Optional<Book> getBookById(int id) throws DaoException;
 
 }

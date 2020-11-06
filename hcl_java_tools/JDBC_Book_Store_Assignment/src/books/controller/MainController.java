@@ -2,28 +2,31 @@ package books.controller;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
 
-import books.dao.DaoException;
+import book.exception.BookNotFoundException;
+import book.exception.DaoException;
 import books.model.Book;
 import books.service.BookServiceImpl;
 
 public class MainController {
 	private static BookServiceImpl bookService = new BookServiceImpl();;
 
-	public static void main(String[] args) throws DaoException {
+	public static void main(String[] args) {
 		// checking connection
 		// Connection conn = ConnectionFactory.getConnection();
 
-		System.out.println("-------------------------------display books--------------------------------------");
-		try {
-			List<Book> booksList = bookService.getAllBooks();
-			for (Book book : booksList) {
-				System.out.println(book.getId() + " " + book.getIsbn() + " " + book.getTitle() + " " + book.getAuthor()
-						+ " " + book.getPrice());
-			}
-		} catch (DaoException e) {
-			throw new DaoException("error while fetching all the records in main", e);
-		}
+//		System.out.println("-------------------------------display books--------------------------------------");
+//		try {
+//			List<Book> booksList = bookService.getAllBooks();
+//			for (Book book : booksList) {
+//				System.out.println(book.getId() + " " + book.getIsbn() + " " + book.getTitle() + " " + book.getAuthor()
+//						+ " " + book.getPrice());
+//			}
+//		} catch (DaoException e) {
+//			throw new DaoException("error while fetching all the records in main", e);
+//		}
 
 		
 //		Book book = new Book("A1234", "Think like a monk", "Jay shetty", 399);
@@ -39,27 +42,34 @@ public class MainController {
 		
 		
 //		try {
-//			int id = 3;
+//			int id = 20;
 //			System.out.println("--------------------------------delete book in db-----------------------------------------------");
 //			bookService.deleteBook(id);
+//			System.out.println("book successfully deleted");
 //		} catch (DaoException e) {
 //			// TODO Auto-generated catch block
-//			throw new DaoException("delete error in main", e);
+//			e.printStackTrace();
 //		}
 		
-		int id = 5;
+		
+		int id = 8;
 		Book updateBook = new Book("A131", "Java 8 in action", "umra", 1200);
 		try {
 			System.out.println("--------------------------------update book in db-----------------------------------------------");
 			bookService.updateBook(id, updateBook);
+			System.out.println("updated successfully");
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
 		
 		int idValueToGetData = 10;
-		System.out.println("--------------------------------get book based on Id-------------------------------------------------");
-		Book getBookById = bookService.getBookById(idValueToGetData);
-		System.out.println(getBookById.getIsbn() + " " + getBookById.getTitle() +" " + getBookById.getAuthor() + " " + getBookById.getPrice());
+		try {
+			System.out.println("--------------------------------get book based on Id-------------------------------------------------");
+			Book getBookById = bookService.getBookById(idValueToGetData).orElseThrow(() ->  new BookNotFoundException("book not found"));
+			System.out.println(getBookById);
+		} catch (DaoException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

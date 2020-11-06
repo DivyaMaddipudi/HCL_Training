@@ -1,9 +1,10 @@
-package books.model;
+package com.collections;
+
+import java.util.Comparator;
 
 //DTO: it is the object which is used to transfer the data from one layere to another
-public class Book {
+public class Book implements Comparable<Book>{
 	
-	private int id;
 	private String isbn;
 	private String title;
 	private String author;
@@ -19,12 +20,6 @@ public class Book {
 		this.price = price;
 	}
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getIsbn() {
 		return isbn;
 	}
@@ -53,9 +48,8 @@ public class Book {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Book [id=");
-		builder.append(id);
-		builder.append(", isbn=");
+		builder.append("Book");
+		builder.append("[isbn=");
 		builder.append(isbn);
 		builder.append(", title=");
 		builder.append(title);
@@ -65,6 +59,12 @@ public class Book {
 		builder.append(price);
 		builder.append("]");
 		return builder.toString();
+	}
+
+
+	@Override
+	public int compareTo(Book o) {
+		return Double.compare(this.getPrice(), o.getPrice());
 	}
 	
 }

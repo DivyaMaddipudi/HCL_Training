@@ -7,10 +7,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import book.exception.BookNotFoundException;
+import book.exception.DaoException;
 import books.controller.ConnectionFactory;
 import books.model.Book;
 
+//DAO =crud + connection object
 public class BookDaoImpl implements BookDao {
 
 	List<Book> booksList = null;
@@ -50,8 +54,7 @@ public class BookDaoImpl implements BookDao {
 
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(
-					"insert into book (isbn, title, author, price) values (?, ?, ?, ?)",
-					Statement.RETURN_GENERATED_KEYS);
+					"insert into book (isbn, title, author, price) values (?, ?, ?, ?)");
 
 			pstmt.setString(1, book.getIsbn());
 			pstmt.setString(2, book.getTitle());
@@ -74,13 +77,12 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public void deleteBook(int id) throws DaoException {
+		Book book = getBookById(id).orElseThrow(() -> new DaoException("book with id: " + id + " not found"));
+		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement("delete from book where id = ?");
 			pstmt.setInt(1, id);
-
-			int numOfRowsEffected = pstmt.executeUpdate();
-			System.out.println(numOfRowsEffected + " book deleted successfully..!");
-
+			pstmt.executeUpdate();
 		} catch (SQLException ex) {
 
 			throw new DaoException("error while deleting the record", ex);
@@ -89,6 +91,8 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public void updateBook(int id, Book book) throws DaoException {
+		
+		Book updateBook = getBookById(id).orElseThrow(() -> new BookNotFoundException("Book with id: " + id +" not found"));
 		try {
 			PreparedStatement pstmt = conn.prepareStatement("update book set isbn = ?, title = ?, author = ?, price = ? where id = ?");
 			pstmt.setString(1, book.getIsbn());
@@ -96,10 +100,7 @@ public class BookDaoImpl implements BookDao {
 			pstmt.setString(3, book.getAuthor());
 			pstmt.setDouble(4, book.getPrice());
 			pstmt.setInt(5, id);
-			
-
-			int numOfRowsEffected = pstmt.executeUpdate();
-			System.out.println(numOfRowsEffected + " book details updated successfully..!");
+			pstmt.executeUpdate();
 			
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -109,15 +110,17 @@ public class BookDaoImpl implements BookDao {
 	}
 
 	@Override
-	public Book getBookById(int id) throws DaoException {
+	public Optional<Book> getBookById(int id) throws DaoException {
 		PreparedStatement pstmt;
 		try {
 			pstmt = conn.prepareStatement("select * from book where id = ?");
 			pstmt.setInt(1, id);
 			ResultSet rs = pstmt.executeQuery();
 			
-			while(rs.next()) {
+			
+			if(rs.next()) {
 				book = new Book();
+				book.setId(rs.getInt("id"));
 				book.setIsbn(rs.getString("isbn"));
 				book.setTitle(rs.getString("title"));
 				book.setAuthor(rs.getString("author"));
@@ -129,7 +132,8 @@ public class BookDaoImpl implements BookDao {
 			
 		}
 		
-		return book;
+		
+		return Optional.ofNullable(book);
 	}
 
 }
