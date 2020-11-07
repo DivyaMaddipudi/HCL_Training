@@ -15,14 +15,14 @@ public class MainController {
 
 		CustomerServiceImpl customerService = new CustomerServiceImpl();
 		
-//		try {
-//			System.out.println("----------------------------------get all customers based on purchase capacity--------------------------------------");
-//			List<Customer> customersBasedOnPurchaseCapacity = customerService.getSelectedCustomer(5);
-//			customersBasedOnPurchaseCapacity.forEach(System.out::println);
-//		} catch (DaoException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			System.out.println("----------------------------------get all customers based on purchase capacity--------------------------------------");
+			List<Customer> customersBasedOnPurchaseCapacity = customerService.getSelectedCustomer(15);
+			customersBasedOnPurchaseCapacity.forEach(System.out::println);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 //		try {
@@ -76,7 +76,7 @@ public class MainController {
 		
 		try {
 			System.out.println("--------------------------get customer by id-------------------------------------------");
-			Customer customer = customerService.getCustomerById(10);
+			Customer customer = customerService.getCustomerById(5);
 			System.out.println(customer);
 			
 		} catch (DaoException e) {
