@@ -52,7 +52,7 @@ public class MainController {
 //		}
 		
 		
-		int id = 8;
+		int id = 11;
 		Book updateBook = new Book("A131", "Java 8 in action", "umra", 1200);
 		try {
 			System.out.println("--------------------------------update book in db-----------------------------------------------");
@@ -62,7 +62,7 @@ public class MainController {
 			e.printStackTrace();
 		}
 		
-		int idValueToGetData = 10;
+		int idValueToGetData = 100;
 		try {
 			System.out.println("--------------------------------get book based on Id-------------------------------------------------");
 			Book getBookById = bookService.getBookById(idValueToGetData).orElseThrow(() ->  new BookNotFoundException("book not found"));

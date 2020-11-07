@@ -69,8 +69,8 @@ public class Customer {
 		this.email = email;
 	}
 
-	public Date getBirthDate() {
-		return birthDate;
+	public java.sql.Date getBirthDate() {
+		return (java.sql.Date) birthDate;
 	}
 
 	public void setBirthDate(Date birthDate) {
