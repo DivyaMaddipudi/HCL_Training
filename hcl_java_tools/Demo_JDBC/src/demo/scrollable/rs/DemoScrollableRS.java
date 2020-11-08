@@ -20,8 +20,8 @@ public class DemoScrollableRS {
 				System.out.println(rs.getString("dname"));
 			}
 			
-			rs.absolute(3);
-			rs.updateString(2, "akhila");
+			rs.absolute(1); // row you want to update like id.
+			rs.updateString(2, "IT");
 			rs.updateRow();
 			rs.beforeFirst();
 			System.out.println("--------------------------------");
