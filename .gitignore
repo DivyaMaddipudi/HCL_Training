@@ -1,4 +1,5 @@
 .*
-.metadata
-.class
-.bak
+/.metadata/.*
+/.class
+/.bak
+*.xmi

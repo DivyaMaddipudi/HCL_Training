@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people SYSTEM "people.dtd">
+<people>
+	<husband employeed="no" payment="cash">
+		<name>jagadeesh</name>
+		<age>abc</age>
+		<wife>
+			<wname>ramya</wname>
+			<age>23</age>
+		</wife>
+	</husband>
+	
+	<husband employeed="no" payment = "card">
+		<name>deepu</name>
+		<age>25</age>
+		<wife>
+			<wname>priya</wname>
+			<age>23</age>
+		</wife>
+	</husband>
+</people>
