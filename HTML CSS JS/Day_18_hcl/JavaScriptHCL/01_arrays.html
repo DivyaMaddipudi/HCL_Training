@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="02_function.js"></script>
+</head>
+<body>
+    <script>
+        // document.write(add(3, 6, 7, 8, 9));
+
+        //iffy
+        // (function hello() {
+        //     console.log("this is a hello");
+        // })();
+        // hello(); // singleton design pattern
+
+
+
+
+
+
+        //constructor function
+        function Employee(uname, address) {
+            this.uname = uname;
+            this.address = address;
+
+            // this.display = function() {
+            //     console.log(this.name);
+            //     console.log(this.address);
+            // }
+            //js explicitly return the value of obj
+        }
+        Employee.prototype.display = function() {
+            console.log(this.uname);
+            console.log(this.address);
+        }
+
+        
+        var e1 = new Employee("divya", "andhra");
+        e1.display();
+        
+        var e2 = new Employee("divya", "andhra");
+        e2.display();
+        
+        var e3 = new Employee("divya", "andhra");
+        e3.display();
+
+        // var ob = {"name" : "raj", "address": "delhi"};
+        // var ob = new Object;
+        // ob.x = 99;
+        // ob.y =  "india";
+    </script>
+</body>
+</html>

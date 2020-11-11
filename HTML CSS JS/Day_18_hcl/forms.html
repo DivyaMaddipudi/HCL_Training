@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formid" action="#" method="POST">
+        <table>
+            <tr>
+                <td>
+                    <label for="nameid"> Enter Name: </label>
+                    
+                </td>
+
+                <td>
+                    <input type="text" name="name" id="nameid">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="passwordid"> Enter Password: </label>
+                </td>
+
+                <td>
+                    <input type="password" name="password" id="passwordid">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="ageid"> Enter Age: </label>
+                </td>
+
+                <td>
+                    <input type="number" name="age" id="ageid">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="phoneid"> Enter Phone: </label>
+                </td>
+
+                <td>
+                    <input type="number" name="phone" id="phoneid" readonly>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="urlid"> Enter your website url: </label>
+                </td>
+
+                <td>
+                    <input type="url" name="url" id="urlid">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="rangeid"> 
+                        Rate your JS skills
+                    </label>
+                </td>
+
+                <td>
+                    <input type="range" name="range" min="0" max="10" step="5" value="1" id="rangeid">
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>
+                    <label for="numberid"> 
+                        Rate your python skills
+                    </label>
+                </td>
+
+                <td>
+                    <input type="number" name="number" min="0" max="30" step="5" value="1" id="numberid">
+                </td>
+            </tr>
+           
+
+            
+            <tr>
+                <td>
+                    <label for="dateid"> 
+                        Enter Date and Time:
+                    </label>
+                </td>
+
+                <td>
+                    <input type="datetime-local" name="date" id="dateid">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="emailid"> Enter Email: </label>
+                </td>
+
+                <td>
+                    <input type="email" name="email" id="emailid">
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>
+                    <label for="dobid"> Enter DOB: </label>
+                </td>
+
+                <td>
+                    <input type="date" name="dob" id="dobid">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="genderid"> Choose Gender: </label>
+                </td>
+
+                <td>
+                    <input type="radio"  name="gender" id="genderid" value="male"> Male
+
+                    <input type="radio"  name="gender" id="genderid" value="female"> Female
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="languageid"> Choose Language: </label>
+                </td>
+
+                <td>
+                    <input type="checkbox" name="language" id="languageid" value="english"> English
+
+                    <input type="checkbox" name="language" id="languageid" value="telugu"> Telugu
+
+                    <input type="checkbox" name="language" id="languageid" value="french"> French
+
+                    <input type="checkbox" name="language" id="languageid" value="spanish"> Spanish
+                </td>
+            </tr>
+
+            
+            <tr>
+                <label for="fileid">
+                    Upload File
+                </label>
+                <td>
+                    <input type="file" name="file" id="fileid">
+                </td>
+            </tr>
+
+            <tr>
+                <label for="qualificationid">
+                    Choose Qualification
+                </label>
+                <td>
+                    <select type="qualification" name="qualification" id="qualificationid">
+                    <option value="" disabled selected>Select your degree </option>
+                    <option value="UG"> UG </option>
+                    <option value="PG"> PG </option>
+                </td>
+            </tr>
+
+            <tr>
+                <label for="addressid">
+                    Enter Address
+                </label>
+                <td>
+                    <textarea name="address" id="addressid" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value ="submit" >
+                </td>
+
+                <td>
+                    <input type="reset" value ="clear" >
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

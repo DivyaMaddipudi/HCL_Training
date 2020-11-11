@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:library xmlns:ns2="https://www.hcltech.com/">
+    <libName>central lib</libName>
+    <libLocation>banglore</libLocation>
+    <centralAc>true</centralAc>
+    <books>
+        <book>
+            <id>1</id>
+            <title>java</title>
+            <price>1000.0</price>
+            <copies>2</copies>
+        </book>
+        <book>
+            <id>2</id>
+            <title>python</title>
+            <price>5000.0</price>
+            <copies>3</copies>
+        </book>
+        <book>
+            <id>3</id>
+            <title>cpp</title>
+            <price>2000.0</price>
+            <copies>1</copies>
+        </book>
+        <book>
+            <id>4</id>
+            <title>spring</title>
+            <price>3000.0</price>
+            <copies>6</copies>
+        </book>
+    </books>
+</ns2:library>

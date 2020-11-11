@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/order" xmlns:tns="http://www.example.org/order" elementFormDefault="qualified">
+
+
+
+    <element name="cart" type="tns:cart"></element>
+    
+    <complexType name="cart">
+    	<sequence>
+    		<element name="cartId" type="int"></element>
+    		<element name="cartTotal" type="double"></element>
+    		<element name="purchaseDate" type="date"></element>
+    		<element name="order" type="tns:orderType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="order">
+    	<sequence>
+    		<element name="orderId" type="int"></element>
+    		<element name="orderItem" type="tns:orderItem"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="orderItem"></complexType>
+
+
+    <simpleType name="orderType">
+    	<restriction base="string"></restriction>
+    </simpleType>
+</schema>

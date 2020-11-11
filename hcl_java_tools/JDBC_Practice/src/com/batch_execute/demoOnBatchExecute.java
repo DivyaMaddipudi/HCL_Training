@@ -4,22 +4,8 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
-
-
-interface A {
-	public boolean test();
-}
-
-class B implements A {
-
-	@Override
-	public boolean test() {
-		
-		return true;
-	}
-	
-}
 
 
 public class demoOnBatchExecute {
@@ -29,6 +15,8 @@ public class demoOnBatchExecute {
 		Connection conn = ConnectionFactory.getConnection();
 		try {
 			DatabaseMetaData dbMetsData = conn.getMetaData();
+			
+			//checks whether batch processing is supported or not
 			if(dbMetsData.supportsBatchUpdates()) {
 				System.out.println("true");
 			} else {
@@ -40,9 +28,28 @@ public class demoOnBatchExecute {
 		}
 		
 		
-		if(conn != null) {
-			System.out.println("working");
-		}
+//		if(conn != null) {
+//			System.out.println("working");
+//		}
+		
+		
+		
+		
+//		try {
+//			conn.setAutoCommit(false);
+//			Statement stmt = conn.createStatement();
+//			stmt.addBatch("insert into batchtemp (name) values ('murali')");
+//			stmt.addBatch("insert into batchtemp (name) values ('anand')");
+//			
+//			stmt.executeBatch();
+//			conn.commit();
+//			conn.close();
+//			
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
 		Scanner sc = new Scanner(System.in);
 		try {
 			PreparedStatement pstmt = conn.prepareStatement("insert into batchtemp (name) values (?)");
@@ -53,6 +60,7 @@ public class demoOnBatchExecute {
 				String name = sc.next();
 				
 				pstmt.setString(1, name);
+				
 				
 				pstmt.addBatch();
 				

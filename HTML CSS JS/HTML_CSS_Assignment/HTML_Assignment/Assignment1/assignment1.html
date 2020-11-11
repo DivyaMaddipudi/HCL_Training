@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Entry Form</title>
+
+    <link rel="stylesheet" type="text/css" href="assignment1.css">
+</head>
+<body>
+    <header><h3><b>BOOK ENTRY FORM</b></h3></header>
+
+    <form action="#" id="bookForm" method="GET">
+
+        <table class="bookTable">
+
+            <tr>
+                <td><label for="isbnId">Enter ISBN number: </label></td>
+                <td><input type="number" id="isbnId" name="isbn" maxlength="15"></td>
+            </tr>
+
+            <tr>
+                <td><label for="titleId">Enter book title: </label></td>
+                <td><input type="text" id="titleId" name="title"></td>
+            </tr>
+
+            <tr>
+                <td><label for="priceId">Enter price: </label></td>
+                <td><input type="text" id="priceId" name="price"></td>
+            </tr>
+
+            <tr>
+                <td><label for="dateId">Enter published date: </label></td>
+                <td><input type="date" id="dateId" name="date"></td>
+            </tr>
+
+            <tr>
+                <td><label for="bookId">Book type: </label></td>
+                <td><select name="book" id="bookId" required>
+                    <option value="" disabled selected>select one option</option>
+                    <option value="programming">Programming</option>
+                    <option value="fictional">Fictional</option>
+                    <option value="framework">Framework</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td><label for="copiesId">Number of copies: </label></td>
+                <td><input type="number" min="1" max="10" id="copiesId" name="copies"></td>
+            </tr>
+
+            <tr>
+                <td><label for="publisherId">Publisher name: </label></td>
+                <td><input type="text" id="publisherId" name="publisher"></td>
+            </tr>
+            
+            <tr>
+                <td><label for="publisherAddressId">Publisher address: </label></td>
+                <td><textarea name="publisherAddress" id="publisherAddressId" cols="30" rows="10"></textarea></td>
+            </tr>
+
+            <tr>
+                <td><label for="authorId">Author name: </label></td>
+                <td><input type="text" id="authorId" name="author"></td>
+            </tr>
+            
+            <tr>
+                <td><label for="authorAddressId">Author address: </label></td>
+                <td><textarea name="authorAddress" id="authorAddressId" cols="30" rows="10"></textarea></td>
+            </tr>
+
+            <tr id="submitId">
+                <td><input type="submit" value="add data"></td>
+            </tr>
+        </table>
+
+    </form>
+
+    <footer id="footerContent">&copy; 2020 HCLT Training</footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:emp xmlns:ns2="https://www.hcltech.com/">
+    <name>Divya</name>
+    <id>121</id>
+    <salary>500000.0</salary>
+</ns2:emp>

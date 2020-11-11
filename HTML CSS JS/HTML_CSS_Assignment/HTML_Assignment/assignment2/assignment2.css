@@ -1,0 +1,22 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr, th, td {
+    border: 2px solid gray;
+    margin: 20px;
+}
+
+th:hover {
+    background-color: orangered;
+}
+
+td {
+    padding: 10px;
+}
+th {
+    padding: 20px;
+    background-color: rgb(5, 151, 5);
+    color: silver;
+}

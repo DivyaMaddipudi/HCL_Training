@@ -1,0 +1,15 @@
+header {
+    color: green;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer {
+    color: blueviolet;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+p {
+    color: red;
+    background-color: silver;
+    text-align: center;
+}

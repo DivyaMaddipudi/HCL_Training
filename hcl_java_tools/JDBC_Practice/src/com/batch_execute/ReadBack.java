@@ -13,15 +13,15 @@ public class ReadBack {
 		Connection conn = ConnectionFactory.getConnection();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement("select * from batchtemp");
-			pstmt.setFetchSize(1000);
-//			System.out.println(pstmt.getFetchSize());
+//			pstmt.setFetchSize(100); //
+			System.out.println(pstmt.getFetchSize());
 			ResultSet rs = pstmt.executeQuery();
 
 			long start = System.currentTimeMillis();
 			
 			while (rs.next()) {
-				System.out.print(rs.getString(1) + " : ");
-				System.out.println(rs.getString(2));
+//				System.out.print(rs.getString(1) + " : ");
+//				System.out.println(rs.getString(2));
 			}
 
 			long end = System.currentTimeMillis();

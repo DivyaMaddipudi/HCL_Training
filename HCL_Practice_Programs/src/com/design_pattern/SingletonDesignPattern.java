@@ -9,13 +9,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-class Singleton implements Serializable, Cloneable{
+class SingletonImpl implements Serializable, Cloneable{
 	
-	private static Singleton singleton = new Singleton();
+	private static SingletonImpl singleton = new SingletonImpl();
 	
-	private Singleton() {}
+	private SingletonImpl() {}
 	
-	public static Singleton getSingleton() {
+	public static SingletonImpl getSingleton() {
 		return singleton;
 	}
 	

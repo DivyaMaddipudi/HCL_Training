@@ -8,11 +8,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.logging.Logger;
 
 class Singleton implements Serializable, Cloneable{
 	
 	//eager initialization
 	private static Singleton singleton = new Singleton();
+	
 	
 	private Singleton() {}
 	public static Singleton getSingleton() {
@@ -29,6 +31,7 @@ class Singleton implements Serializable, Cloneable{
 public class DemoSingleTonDesignPattern {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+		
 		
 		Singleton singleton = Singleton.getSingleton();
 		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("data.ser")));
