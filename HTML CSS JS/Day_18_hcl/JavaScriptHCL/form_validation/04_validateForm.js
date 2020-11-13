@@ -12,7 +12,7 @@ function valid() {
     }
 
     if(isBlank(password)) {
-        document.getElementById("passwordMsg").innerHTML = "Please enter your name";
+        document.getElementById("passwordMsg").innerHTML = "Please enter your password";
         document.getElementById("passwordMsg").style.color =  "red";
         return false;
     }
@@ -32,7 +32,7 @@ return true;
 }
 
 function isBlank(val) {
-    return (val=='')?true:false;
+    return (val==="")?true:false;
 }
 
 function isValidPhoneNumber(phoneNumber) {
@@ -41,6 +41,6 @@ function isValidPhoneNumber(phoneNumber) {
 }
 
 function isValidEmail(email) {
-    var emailRegex = /^[A-Za-z0-9]{8, 20}+@[a-zA-Z0-9.]{3, 10}+.[a-zA-Z0-9-.]{2, 4}+$/;
+    var emailRegex = /^[A-Za-z0-9.]{4, 20}+@[a-zA-Z0-9.]{3, 10}+.[a-zA-Z0-9-.]{2, 4}+$/;
     return email.match(emailRegex)?true:false;
 }

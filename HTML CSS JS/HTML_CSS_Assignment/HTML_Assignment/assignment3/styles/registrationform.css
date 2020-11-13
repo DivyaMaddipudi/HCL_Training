@@ -4,7 +4,7 @@ header {
 }
 
 table {
-    margin-top: 10%;
+    margin-top: 10px;
     margin-left: 30%;
     margin-right: auto;
 
@@ -16,5 +16,5 @@ tr, td {
 }
 
 tr:nth-child(even) {
-    background-color: rgb(131, 245, 131);
+    background-color: rgb(190, 185, 185)
 }

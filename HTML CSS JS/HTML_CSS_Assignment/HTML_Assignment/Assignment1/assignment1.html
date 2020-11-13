@@ -6,6 +6,8 @@
     <title>Book Entry Form</title>
 
     <link rel="stylesheet" type="text/css" href="assignment1.css">
+
+    <script src="validation.js"></script>
 </head>
 <body>
     <header><h3><b>BOOK ENTRY FORM</b></h3></header>
@@ -17,11 +19,13 @@
             <tr>
                 <td><label for="isbnId">Enter ISBN number: </label></td>
                 <td><input type="number" id="isbnId" name="isbn" maxlength="15"></td>
+                <td><label id="isbnMsg"></label></td>
             </tr>
 
             <tr>
                 <td><label for="titleId">Enter book title: </label></td>
                 <td><input type="text" id="titleId" name="title"></td>
+                <td><label id="titleMsg"></label></td>
             </tr>
 
             <tr>
@@ -47,11 +51,13 @@
             <tr>
                 <td><label for="copiesId">Number of copies: </label></td>
                 <td><input type="number" min="1" max="10" id="copiesId" name="copies"></td>
+                <td><label id="copiesMsg"></label></td>
             </tr>
 
             <tr>
                 <td><label for="publisherId">Publisher name: </label></td>
                 <td><input type="text" id="publisherId" name="publisher"></td>
+                <td><label id="publisherMsg"></label></td>
             </tr>
             
             <tr>
@@ -62,6 +68,7 @@
             <tr>
                 <td><label for="authorId">Author name: </label></td>
                 <td><input type="text" id="authorId" name="author"></td>
+                <td><label id="authorMsg"></label></td>
             </tr>
             
             <tr>
@@ -70,7 +77,7 @@
             </tr>
 
             <tr id="submitId">
-                <td><input type="submit" value="add data"></td>
+                <td><input type="submit" value="add data" onclick="return validateBook()"></td>
             </tr>
         </table>
 
