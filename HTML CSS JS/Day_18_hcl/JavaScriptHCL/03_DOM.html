@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div1">
+        <p>This is going to changed!</p>
+    </div>
+    <script>
+        function changeIt() {
+            var val = prompt("Entere ur name");
+            var epara = document.getElementById("div1");
+            epara.innerHTML = val;
+            epara.setAttribute("align", "center");
+        }
+        changeIt();
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scripts/registrationform.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/registrationform.css">
+</head>
+<body>
+
+    <header><h2>Basic Form Validation</h2></header>
+    
+    <form action="#" method="GET">
+        <table>
+            <tr>
+                <td>
+                    Enter Name: 
+                </td>
+                <td>
+                    <input type="text" name="name" id="nameId">
+                </td>
+                <td>
+                    <label id="nameMsg"></label>
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>
+                    Enter PhoneNumber: 
+                </td>
+                <td>
+                    <input type="number" name="phoneNumber" id="phoneNumberId">
+                </td>
+                <td>
+                    <label id="phoneNumberMsg"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Enter Address:
+                </td>
+                <td>
+                    <textarea name="address" id="addressId" cols="30" rows="10"></textarea>
+                </td>
+                <td>
+                    <label id="addressMsg"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Enter Gender:
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    Enter Email: 
+                </td>
+                <td>
+                    <input type="text" name="email" id="emailId">
+                </td>
+                <td>
+                    <label id="emailMsg"></label>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="submit" onclick="return valid()">
+                </td>
+            </tr>
+
+        </table>
+        
+    </form>
+</body>
+</html>

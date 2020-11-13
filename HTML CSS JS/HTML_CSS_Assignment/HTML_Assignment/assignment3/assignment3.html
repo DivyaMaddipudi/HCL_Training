@@ -4,28 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" type="text/css" href="assignment3.css">
+    <link rel="stylesheet" href="assignment3.css">
+    
 </head>
 <body>
-    
-    <nav>
-        <ul class="ul1">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">REGISTER</a></li>
-            <li><a href="#">COURSES</a>
-                <ul id="ulId2">
-                    <li><a href="#"> Project 1</a></li>
-                    <li><a href="#"> Project 2</a></li>
-                    <li><a href="#">Project 3</a></li>
-                    <li><a href="#"> Project 4</a></li>
+    <ul id="menu">
+        <li><a href="#">HOME</a></li>
+            <li><a href="#">REGISTER</a>
+                <ul>
+                    <li><a href="registrationform.html">Registration Form</a></li>
                 </ul>
             </li>
-            <li><a href="#">PERFORMER</a></li>
-            <li><a href="#">STAFF</a></li>
-            <li><a href="#">ABOUT US</a></li>
-        </ul>
-    </nav>
-
+            
+            <li><a href="#">COURSES</a>
+            <ul>
+                <li><a href="#" title="Java">Java</a>
+                    <ul>
+                        <li><a href="#" title="Core Java">Core Java</a></li>
+                        <li><a href="#" title="Servlets/JSP">Servlets/JSP</a></li>
+                        <li><a href="#" title="Certification">Certification</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" title="Python">Python</a>
+                    <ul>
+                        <li><a href="#" title="Python Course">Python Course</a></li>
+                        <li><a href="#" title="Django">Django</a></li>
+                        <li><a href="#" title="Certification">Certification</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" title="Machine Learning">Machine Learning</a>
+                    <ul>
+                        <li><a href="#" title="Basics">ML Basics</a></li>
+                        <li><a href="#" title="Basics Certification">Basics Certification</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" title="Java Frameworks">Java Frameworks</a>
+                    <ul>
+                        <li><a href="#" title="Spring">Spring</a></li>
+                        <li><a href="#" title="Spring MVC">Spring MVC</a></li>
+                        <li><a href="#" title="Hibernate">Hibernate</a></li>
+                        <li><a href="#" title="Spring Auth">Spring Auth</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </li>
+        <li><a href="#">PERFORMER</a></li>
+        <li><a href="#">STAFF</a></li>
+        <li><a href="#">ABOUT US</a></li>
+    </ul>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        function myMethod() {
+            var value = document.getElementById("nameId").value;
+
+            document.getElementById("lId").innerHTML=value;
+        }
+    </script>
+
+    
+    <form action="#" onsubmit="myMethod()">
+        Enter Name: <input type="text" name="name" id="nameId"> <br>
+        <label id="lId"></label>
+    
+        <input type="submit">
+    </form>
+
+
+</body>
+</html>
