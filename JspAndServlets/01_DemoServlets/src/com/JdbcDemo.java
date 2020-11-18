@@ -39,10 +39,10 @@ public class JdbcDemo extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		out.print("<br>");
-		
 		try {
 			Connection conn = ConnectionFactory.getConnection();
 			Statement stmt = conn.createStatement();

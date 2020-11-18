@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>10Filters_Demo</display-name>
+ 	
+  	<error-page>
+ 		<error-code>404</error-code>
+ 		<location>/error.jsp</location>
+ 	</error-page>
+ 
+  <servlet>
+    <servlet-name>S1</servlet-name>
+    <servlet-class>com.demo.S1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>S1</servlet-name>
+    <url-pattern>/S1.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>S2</display-name>
+    <servlet-name>S2</servlet-name>
+    <servlet-class>com.demo.S2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>S2</servlet-name>
+    <url-pattern>/S2.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>S3</display-name>
+    <servlet-name>S3</servlet-name>
+    <servlet-class>com.demo.S3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>S3</servlet-name>
+    <url-pattern>/S3</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>FilterDemo</filter-name>
+    <filter-class>com.demo.FilterDemo</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterDemo</filter-name>
+    <url-pattern>*.do</url-pattern>
+    
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+  	<dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+ 
+
+ 
+ 
+ <!-- 
+  <filter>
+    <display-name>Filter3</display-name>
+    <filter-name>Filter3</filter-name>
+    <filter-class>com.demo.Filter3</filter-class>
+  </filter>
+  
+  
+  <filter-mapping>
+    <filter-name>Filter3</filter-name>
+    <url-pattern>/Filter3</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Filter3</filter-name>
+    <servlet-name>S1</servlet-name>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+   -->
+</web-app>
