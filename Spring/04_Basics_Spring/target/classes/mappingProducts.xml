@@ -2,7 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="country" class="com.mapping.properties.Country">
+		<property name="countryName" value="india"/>
+		<property name="states">
+			<props>
+				<prop key="Andhra">Amaravathi</prop>
+				<prop key="TamilNadu">Chennai</prop>
+				<prop key="Karnataka">Baanglore</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
 
+	
 	<bean id="cart" class="com.mapping.product.Cart">
 		<property name="cartHolderName" value="divya"></property>
 		<property name="products">

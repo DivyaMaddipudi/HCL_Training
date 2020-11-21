@@ -68,6 +68,17 @@ public class BookDaoImpl implements BookDao{
 		
 		Book bookToUpdate = getBookById(id);
 		
+		try {
+			Connection conn = dataSource.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement("update book_table set price = ? where id = ?");
+			pstmt.setDouble(1, book.getPrice());
+			pstmt.setInt(2, id);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="bookService" class="com.assignment.service.BookServiceImpl">
+		<constructor-arg name="bookDao" ref="bookDao"></constructor-arg>
+	</bean>
+	
+	<bean id="bookDao" class="com.assignment.dao.BookDaoImpl">
+		<property name="counter" value="0"/>
+		<property name="booksMap">
+			<map>
+				<entry key="1" value-ref="book1"/>
+				<entry key="2" value-ref="book2"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="book1" class="com.assignment.dao.Book">
+		<property name="id" value="1"/>
+		<property name="isbn" value="ABC123"/>
+		<property name="title" value="Head first Java"/>
+		<property name="author" value="Katthy"/>
+		<property name="price" value="600"/>
+	</bean>
+	
+	<bean id="book2" class="com.assignment.dao.Book">
+		<property name="id" value="2"/>
+		<property name="isbn" value="ABC723"/>
+		<property name="title" value="Servlet jsp Java"/>
+		<property name="author" value="Katthy"/>
+		<property name="price" value="700"/>
+	</bean>
+
+</beans>

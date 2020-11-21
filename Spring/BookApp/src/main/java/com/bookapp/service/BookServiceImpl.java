@@ -28,7 +28,7 @@ public class BookServiceImpl implements BookService{
 	}
 
 	public void updateBook(int id, Book book) {
-		// TODO Auto-generated method stub
+		dao.updateBook(id, book);
 		
 	}
 
