@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+		<bean id="person" class="com.demo.Person" scope="prototype" autowire="constructor">
+		<constructor-arg type="java.lang.String" value="veenai"></constructor-arg>
+		<!-- <property name="personName" value="divya"></property> -->
+		<!-- <property name="vehicle" ref="bike"></property> -->
+	</bean>
+	
+	<!--  hey spring y not u guess that a person need a dependency of vehicle 
+			spring autowiring?
+			aka shortcut: 
+				byName
+				byType
+				byCtr
+	 -->
+	
+	<!--  to avoid confusion we have: primary and autowire-candidate="false" -->
+	<bean id="bike" class="com.demo.Bike" scope="prototype" primary="true">
+		<property name="price" value="10000"/>
+		<property name="speed" value="150"></property>
+
+	</bean>
+	
+	<bean id="car" class="com.demo.Car">
+		<property name="color" value="Red"/>
+		<property name="speed" value="100"></property>
+	</bean>
+	
+</beans>

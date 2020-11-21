@@ -27,21 +27,25 @@ public class SecFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		
 		HttpSession session = req.getSession(false);
+
 		
 		boolean isValid = false; //let assume he is not valid user!
 		if(session != null) {
 			User user = (User) session.getAttribute("user");
-			
+			System.out.println(user);
 			if(user!=null) {
 				isValid = true;
 			}
-		}
+		} else if (session == null || session.getAttribute("username") == null) {
+	    	res.sendRedirect("welcome.html"); // No logged-in user found, so redirect to login page.
+	    }
 		
 		if(isValid) {
 			chain.doFilter(request, response);
 		} else {
 			res.sendRedirect("login.jsp?message=please login");
 		}
+		
 	}
 	
 

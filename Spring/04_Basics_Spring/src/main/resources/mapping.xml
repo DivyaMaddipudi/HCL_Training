@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bank" class="com.mapping.Bank">
+		<property name="bank" value="HDFC Bank" />
+		<property name="accounts">
+			<set>
+				<ref bean="account1" />
+				<ref bean="account2" />
+				<ref bean="account3" />
+				<ref bean="account4" />
+			</set>
+		</property>
+	</bean>
+
+	<bean id="account1" class="com.mapping.Account">
+		<property name="id" value="123" />
+		<property name="name" value="gupta" />
+		<property name="balance" value="4000" />
+	</bean>
+
+	<bean id="account2" class="com.mapping.Account">
+		<property name="id" value="124" />
+		<property name="name" value="murali" />
+		<property name="balance" value="5000" />
+	</bean>
+
+	<bean id="account3" class="com.mapping.Account">
+		<property name="id" value="125" />
+		<property name="name" value="veenai" />
+		<property name="balance" value="7000" />
+	</bean>
+	
+	<bean id="account4" class="com.mapping.Account">
+		<property name="id" value="124" />
+		<property name="name" value="murali" />
+		<property name="balance" value="5000" />
+	</bean>
+</beans>

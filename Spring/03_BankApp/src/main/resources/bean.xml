@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+	<bean id="bankService" class="com.bankapp.model.service.AccountServiceImpl" c:accountDao-ref="accountDao" p:emailService-ref="emailService">
+		 
+		<constructor-arg ref="accountDao"></constructor-arg>
+		<property name="emailService" ref="emailService"></property>
+		 
+	</bean>
+	-->
+	 
+	 <!-- 
+	 	<bean id="bankService" class="com.bankapp.model.service.AccountServiceImpl" c:accountDao-ref="accountDao">
+			<constructor-arg ref="accountDao"/>
+		</bean>
+	  -->
+	  
+	<bean id="bankService" class="com.bankapp.model.service.AccountServiceImpl" autowire="byName">
+		<!-- 
+		<constructor-arg ref="accountDao"></constructor-arg>
+		<property name="emailService" ref="emailService"></property>
+		 -->
+	</bean>
+	
+	
+	<bean id="accountDao" class="com.bankapp.model.dao.AccountDaoImpl" />
+	
+	
+	<bean id="emailService" class="com.bankapp.model.service.EmailServiceImpl" autowire-candidate="default"></bean>
+	 
+</beans>

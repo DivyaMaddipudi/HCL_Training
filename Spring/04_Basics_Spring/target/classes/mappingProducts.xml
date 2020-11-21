@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cart" class="com.mapping.product.Cart">
+		<property name="cartHolderName" value="divya"></property>
+		<property name="products">
+			<map>
+				<entry key="1" value-ref="p1" />
+				<entry key="2" value-ref="p2" />
+				<entry key="3" value-ref="p3" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="p1" class="com.mapping.product.Product">
+		<property name="id" value="1"></property>
+		<property name="name" value="laptop"></property>
+		<property name="price" value="10000"></property>
+	</bean>
+
+
+	<bean id="p2" class="com.mapping.product.Product">
+		<property name="id" value="2"></property>
+		<property name="name" value="mobile"></property>
+		<property name="price" value="20000"></property>
+	</bean>
+
+	<bean id="p3" class="com.mapping.product.Product">
+		<property name="id" value="3"></property>
+		<property name="name" value="bag"></property>
+		<property name="price" value="10000"></property>
+	</bean>
+</beans>

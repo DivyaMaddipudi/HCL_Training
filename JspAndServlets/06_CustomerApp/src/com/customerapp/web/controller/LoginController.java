@@ -37,8 +37,6 @@ public class LoginController extends HttpServlet {
 			request.setAttribute("user", "invalid credentials");
 			response.sendRedirect("login.jsp?error=loginfailed");
 		}
-		
-	
 	}
 
 }
