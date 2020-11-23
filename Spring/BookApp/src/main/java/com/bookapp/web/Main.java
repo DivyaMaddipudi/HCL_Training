@@ -22,13 +22,18 @@ public class Main {
 //		Book book = bookService.getBookById(1);
 //		System.out.println(book);
 		
-		Book book = new Book("A123", "Spring in action", "baytes", 1000);
-		bookService.updateBook(1, book);
+//		Book book = new Book("A123", "Spring in action", "baytes", 1000);
+//		bookService.updateBook(1, book);
 		
-		System.out.println("---------after updation---------------");
+//		System.out.println("---------after updation---------------");
+//		List<Book> books = bookService.getAllBooks();
+//		books.forEach(b -> System.out.println(b));
+		
+//		Book b = new Book("RE123", "LIFE IS COOL", "divya", 560);
+//		bookService.addBook(b);
+		System.out.println("-----------------------after add books-----------------------");
 		List<Book> books = bookService.getAllBooks();
-		books.forEach(b -> System.out.println(b));
-		
+		books.forEach(book -> System.out.println(book));
 		
 	}
 }

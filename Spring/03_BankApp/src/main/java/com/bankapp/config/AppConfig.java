@@ -27,7 +27,7 @@ public class AppConfig {
 	}
 
 
-	@Bean(autowire = Autowire.BY_TYPE)
+//	@Bean(autowire = Autowire.BY_TYPE)
 	public EmailService getEmailService() {
 		EmailService emailService = new EmailServiceImpl();
 		return emailService;

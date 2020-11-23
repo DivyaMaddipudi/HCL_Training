@@ -9,10 +9,8 @@ import org.springframework.stereotype.Component;
 
 //@Component(value = "bookDao")
 public class BookDaoImpl implements BookDao{
-	private int counter;
+	private static int counter;
 	private Map<Integer, Book> booksMap;
-	
-	
 	
 //	static  {
 //		booksMap.put(++counter, new Book(counter, "ABC123", "Head first Java" , "Katthy", 600));

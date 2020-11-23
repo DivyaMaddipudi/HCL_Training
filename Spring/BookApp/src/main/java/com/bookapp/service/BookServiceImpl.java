@@ -1,29 +1,36 @@
 package com.bookapp.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bookapp.dao.Book;
 import com.bookapp.dao.BookDao;
+import com.bookapp.service.aspects.Loggable;
 
 @Service(value = "bookService")
 public class BookServiceImpl implements BookService{
 
-	@Autowired
+	
+	
 	private BookDao dao;
+	
+	@Autowired
+	public BookServiceImpl(BookDao dao) {
+		this.dao = dao;
+	}
+	
+	@Loggable
 	public List<Book> getAllBooks() {
 		return dao.getAllBooks();
 	}
-
+	
 	public Book addBook(Book book) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.addBook(book);
 	}
 
 	public void deleteBook(int id) {
-		// TODO Auto-generated method stub
+		dao.deleteBook(id);
 		
 	}
 

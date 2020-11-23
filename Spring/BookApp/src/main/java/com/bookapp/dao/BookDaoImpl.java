@@ -12,10 +12,12 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.bookapp.exception.BookNotFoundException;
+import com.bookapp.exception.DataAccessException;
 
 @Primary
 @Repository
@@ -24,6 +26,7 @@ public class BookDaoImpl implements BookDao{
 	
 	private DataSource dataSource;
 	
+	@Autowired
 	public BookDaoImpl(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
@@ -54,14 +57,49 @@ public class BookDaoImpl implements BookDao{
 
 	public Book addBook(Book book) {
 		
-		return null;
-		
+		try {
+            Connection connection=dataSource.getConnection();
+            
+            String add_book_query=
+            "insert into book_table(isbn, title, author,  price) values(?,?,?,?)";
+            PreparedStatement pstmt=connection.prepareStatement(add_book_query, 
+                    Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, book.getIsbn());
+            pstmt.setString(2, book.getTitle());
+            pstmt.setString(3, book.getAuthor());
+          
+            pstmt.setDouble(4, book.getPrice());
+            
+            int noOfRowsEffected=pstmt.executeUpdate();
+            
+            if(noOfRowsEffected>0) {
+                ResultSet rs=pstmt.getGeneratedKeys();
+                rs.next();
+                book.setId(rs.getInt(1));
+            }
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            throw new DataAccessException(ex.getMessage());
+        }
+        return book;
 
 	}
 
 	public void deleteBook(int id) {
 		
-		
+		 Book bookToBeDeleted = getBookById(id);
+         
+         try {
+             Connection connection = dataSource.getConnection();
+             String delete_book_by_id="delete from book_table where id=?";
+             PreparedStatement pstmt= connection.prepareStatement(delete_book_by_id);
+             pstmt.setInt(1, id);
+             pstmt.executeUpdate();
+             
+         } catch (SQLException e) {
+             e.printStackTrace();
+         }
 	}
 
 	public void updateBook(int id, Book book) {

@@ -9,17 +9,14 @@ public class Book {
 	private double price;
 	
 	public Book() {
-		super();
 	}
 	public Book(String isbn, String title, String author, double price) {
-		super();
 		this.isbn = isbn;
 		this.title = title;
 		this.author = author;
 		this.price = price;
 	}
 	public Book(int id, String isbn, String title, String author, double price) {
-		super();
 		this.id = id;
 		this.isbn = isbn;
 		this.title = title;
