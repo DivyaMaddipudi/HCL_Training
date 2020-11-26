@@ -1,0 +1,103 @@
+package com.composite.pk;
+
+import java.util.Date;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
+@Entity
+@IdClass(BookId.class)
+@Table(name="composite_id_1")
+public class Book {
+	
+//	@EmbeddedId
+//	private BookId pk;
+	@Id
+	private String isbn;
+	
+	@Id
+	private String title;
+	
+	private String author;
+	
+	@Temporal(TemporalType.DATE)
+	private Date pubDate;
+	private double price;
+	
+	public Book() {
+		
+	}
+
+	public Book(String isbn, String title, String author, Date pubDate, double price) {
+		super();
+		this.isbn = isbn;
+		this.title = title;
+		this.author = author;
+		this.pubDate = pubDate;
+		this.price = price;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public Date getPubDate() {
+		return pubDate;
+	}
+
+	public void setPubDate(Date pubDate) {
+		this.pubDate = pubDate;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Book [isbn=");
+		builder.append(isbn);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", author=");
+		builder.append(author);
+		builder.append(", pubDate=");
+		builder.append(pubDate);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append("]");
+		return builder.toString();
+	}
+
+}

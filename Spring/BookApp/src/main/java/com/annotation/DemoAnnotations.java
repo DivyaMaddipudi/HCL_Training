@@ -1,11 +1,13 @@
 package com.annotation;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-class Foo {
+@SuppressWarnings("serial")
+class Foo implements Serializable{
 	
-	@SuppressWarnings({"unchecked", "rawtypes"})
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void usingCollection() {
 		List list = new ArrayList();
 		list.add(10);

@@ -1,5 +1,7 @@
 package com.accounts.service;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,10 @@ public class AccountServiceImpl implements AccountService{
 	
 	AccountDao dao;
 	
+	public AccountServiceImpl() {
+		
+	}
+	
 	@Autowired
 	public AccountServiceImpl(AccountDao dao) {
 		this.dao = dao;
@@ -21,10 +27,17 @@ public class AccountServiceImpl implements AccountService{
 		Account source = dao.find(sourceAccountId);
 		Account target = dao.find(targetAccountId);
 		
+		System.out.println(dao.find(sourceAccountId));
+		System.out.println(dao.find(targetAccountId));
+		
 		source.setBalance(source.getBalance() - amount);
 		target.setBalance(target.getBalance() + amount);
 		
+		dao.update(Arrays.asList(source, target));
+		
 		System.out.println("---------------------account details after transferring--------------------------------------------");
+		System.out.println(dao.find(sourceAccountId));
+		System.out.println(dao.find(targetAccountId));
 	}
 
 	@Override
@@ -38,8 +51,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public Account getAccount(long accountId) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.find(accountId);
 	}
 
 }

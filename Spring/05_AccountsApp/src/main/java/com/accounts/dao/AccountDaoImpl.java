@@ -46,8 +46,9 @@ public class AccountDaoImpl implements AccountDao{
 
 	@Override
 	public void update(List<Account> accounts) {
-		// TODO Auto-generated method stub
-		
+		for(Account account: accounts) {
+			update(account);
+		}
 	}
 
 	@Override
