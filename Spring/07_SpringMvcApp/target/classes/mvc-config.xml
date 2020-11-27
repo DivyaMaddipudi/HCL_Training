@@ -12,6 +12,8 @@
 	
 	<context:property-placeholder location="classpath:db.properties"/>
 	
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"></bean>
+	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="url" value="${db.url}"></property>
 		<property name="driverClassName" value="${db.drivername}"></property>

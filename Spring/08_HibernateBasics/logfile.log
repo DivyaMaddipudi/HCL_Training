@@ -3446,3 +3446,192 @@ org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: : near li
 	at com.bookapp.dao.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:17) [bin/:?]
 	at com.demo.queries.DemoQueries.main(DemoQueries.java:15) [bin/:?]
 INFO  | 2020-11-26 16:02:39 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:230) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/mapping_hib?useSSL=false]
+INFO  | 2020-11-26 19:16:11 | [main] hibernate.Version (Version.java:45) - HHH000412: Hibernate Core {5.2.9.Final}
+INFO  | 2020-11-26 19:16:11 | [main] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
+WARN  | 2020-11-26 19:16:11 | [main] stax.LocalXmlResourceResolver (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+INFO  | 2020-11-26 19:16:11 | [main] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+WARN  | 2020-11-26 19:16:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:70) - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO  | 2020-11-26 19:16:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:126) - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mapping_hib?useSSL=false]
+INFO  | 2020-11-26 19:16:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:135) - HHH10001001: Connection properties: {user=student, password=****}
+INFO  | 2020-11-26 19:16:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:140) - HHH10001003: Autocommit mode: false
+INFO  | 2020-11-26 19:16:12 | [main] internal.PooledConnections (PooledConnections.java:41) - HHH000115: Hibernate connection pool size: 100 (min=1)
+INFO  | 2020-11-26 19:16:12 | [main] dialect.Dialect (Dialect.java:157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+INFO  | 2020-11-26 19:16:12 | [main] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.0.Final
+INFO  | 2020-11-26 19:16:13 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:47) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@596df867] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2020-11-26 19:16:14 | [main] internal.QueryTranslatorFactoryInitiator (QueryTranslatorFactoryInitiator.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+ERROR | 2020-11-26 19:16:15 | [main] ast.ErrorCounter (ErrorCounter.java:60) - line 1:53: unexpected token: :
+ERROR | 2020-11-26 19:16:15 | [main] ast.ErrorCounter (ErrorCounter.java:55) - line 1:53: unexpected token: :
+antlr.NoViableAltException: unexpected token: :
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.atom(HqlBaseParser.java:3630) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.unaryExpression(HqlBaseParser.java:3398) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.multiplyExpression(HqlBaseParser.java:3270) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.additiveExpression(HqlBaseParser.java:2927) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.concatenation(HqlBaseParser.java:612) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.relationalExpression(HqlBaseParser.java:2694) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.equalityExpression(HqlBaseParser.java:2555) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.negatedExpression(HqlBaseParser.java:2519) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalAndExpression(HqlBaseParser.java:2435) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalOrExpression(HqlBaseParser.java:2400) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.expression(HqlBaseParser.java:2113) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalExpression(HqlBaseParser.java:1891) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.whereClause(HqlBaseParser.java:495) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:751) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:283) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.query.spi.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:157) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.checkNamedQueries(SessionFactoryImpl.java:525) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:445) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at com.bookapp.dao.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:17) [bin/:?]
+	at com.mapping.one_to_one.bi.MainTesterOneToOne.main(MainTesterOneToOne.java:13) [bin/:?]
+ERROR | 2020-11-26 19:16:15 | [main] internal.SessionFactoryImpl (SessionFactoryImpl.java:325) - HHH000177: Error in named query: findCustomerById
+org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: : near line 1, column 53 [select c from com.demo.queries.Customer c where c.id:=id]
+	at org.hibernate.hql.internal.ast.QuerySyntaxException.convert(QuerySyntaxException.java:74) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:91) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:292) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.query.spi.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:157) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.checkNamedQueries(SessionFactoryImpl.java:525) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:445) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at com.bookapp.dao.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:17) [bin/:?]
+	at com.mapping.one_to_one.bi.MainTesterOneToOne.main(MainTesterOneToOne.java:13) [bin/:?]
+INFO  | 2020-11-26 19:16:15 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:230) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/mapping_hib?useSSL=false]
+INFO  | 2020-11-26 19:17:11 | [main] hibernate.Version (Version.java:45) - HHH000412: Hibernate Core {5.2.9.Final}
+INFO  | 2020-11-26 19:17:11 | [main] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
+WARN  | 2020-11-26 19:17:11 | [main] stax.LocalXmlResourceResolver (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+INFO  | 2020-11-26 19:17:12 | [main] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+WARN  | 2020-11-26 19:17:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:70) - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO  | 2020-11-26 19:17:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:126) - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mapping_hib?useSSL=false]
+INFO  | 2020-11-26 19:17:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:135) - HHH10001001: Connection properties: {user=student, password=****}
+INFO  | 2020-11-26 19:17:12 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:140) - HHH10001003: Autocommit mode: false
+INFO  | 2020-11-26 19:17:12 | [main] internal.PooledConnections (PooledConnections.java:41) - HHH000115: Hibernate connection pool size: 100 (min=1)
+INFO  | 2020-11-26 19:17:12 | [main] dialect.Dialect (Dialect.java:157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+INFO  | 2020-11-26 19:17:13 | [main] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.0.Final
+INFO  | 2020-11-26 19:17:13 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:47) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@596df867] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2020-11-26 19:17:13 | [main] internal.QueryTranslatorFactoryInitiator (QueryTranslatorFactoryInitiator.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+ERROR | 2020-11-26 19:17:13 | [main] ast.ErrorCounter (ErrorCounter.java:60) - line 1:53: unexpected token: :
+ERROR | 2020-11-26 19:17:13 | [main] ast.ErrorCounter (ErrorCounter.java:55) - line 1:53: unexpected token: :
+antlr.NoViableAltException: unexpected token: :
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.atom(HqlBaseParser.java:3630) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.unaryExpression(HqlBaseParser.java:3398) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.multiplyExpression(HqlBaseParser.java:3270) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.additiveExpression(HqlBaseParser.java:2927) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.concatenation(HqlBaseParser.java:612) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.relationalExpression(HqlBaseParser.java:2694) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.equalityExpression(HqlBaseParser.java:2555) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.negatedExpression(HqlBaseParser.java:2519) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalAndExpression(HqlBaseParser.java:2435) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalOrExpression(HqlBaseParser.java:2400) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.expression(HqlBaseParser.java:2113) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalExpression(HqlBaseParser.java:1891) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.whereClause(HqlBaseParser.java:495) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:751) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:283) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.query.spi.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:157) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.checkNamedQueries(SessionFactoryImpl.java:525) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:445) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at com.bookapp.dao.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:17) [bin/:?]
+	at com.mapping.one_to_one.bi.MainTesterOneToOne.main(MainTesterOneToOne.java:13) [bin/:?]
+ERROR | 2020-11-26 19:17:13 | [main] internal.SessionFactoryImpl (SessionFactoryImpl.java:325) - HHH000177: Error in named query: findCustomerById
+org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: : near line 1, column 53 [select c from com.demo.queries.Customer c where c.id:=id]
+	at org.hibernate.hql.internal.ast.QuerySyntaxException.convert(QuerySyntaxException.java:74) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:91) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:292) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.query.spi.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:157) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.checkNamedQueries(SessionFactoryImpl.java:525) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:445) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at com.bookapp.dao.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:17) [bin/:?]
+	at com.mapping.one_to_one.bi.MainTesterOneToOne.main(MainTesterOneToOne.java:13) [bin/:?]
+INFO  | 2020-11-26 19:17:13 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:230) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/mapping_hib?useSSL=false]
+INFO  | 2020-11-26 19:17:56 | [main] hibernate.Version (Version.java:45) - HHH000412: Hibernate Core {5.2.9.Final}
+INFO  | 2020-11-26 19:17:56 | [main] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
+WARN  | 2020-11-26 19:17:56 | [main] stax.LocalXmlResourceResolver (LocalXmlResourceResolver.java:91) - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+INFO  | 2020-11-26 19:17:57 | [main] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+WARN  | 2020-11-26 19:17:57 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:70) - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO  | 2020-11-26 19:17:57 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:126) - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mapping_hib?useSSL=false]
+INFO  | 2020-11-26 19:17:57 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:135) - HHH10001001: Connection properties: {user=student, password=****}
+INFO  | 2020-11-26 19:17:57 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:140) - HHH10001003: Autocommit mode: false
+INFO  | 2020-11-26 19:17:57 | [main] internal.PooledConnections (PooledConnections.java:41) - HHH000115: Hibernate connection pool size: 100 (min=1)
+INFO  | 2020-11-26 19:17:57 | [main] dialect.Dialect (Dialect.java:157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+INFO  | 2020-11-26 19:17:57 | [main] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.0.Final
+INFO  | 2020-11-26 19:17:58 | [main] internal.DdlTransactionIsolatorNonJtaImpl (DdlTransactionIsolatorNonJtaImpl.java:47) - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@596df867] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO  | 2020-11-26 19:17:58 | [main] internal.QueryTranslatorFactoryInitiator (QueryTranslatorFactoryInitiator.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+ERROR | 2020-11-26 19:17:58 | [main] ast.ErrorCounter (ErrorCounter.java:60) - line 1:53: unexpected token: :
+ERROR | 2020-11-26 19:17:58 | [main] ast.ErrorCounter (ErrorCounter.java:55) - line 1:53: unexpected token: :
+antlr.NoViableAltException: unexpected token: :
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.atom(HqlBaseParser.java:3630) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.unaryExpression(HqlBaseParser.java:3398) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.multiplyExpression(HqlBaseParser.java:3270) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.additiveExpression(HqlBaseParser.java:2927) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.concatenation(HqlBaseParser.java:612) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.relationalExpression(HqlBaseParser.java:2694) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.equalityExpression(HqlBaseParser.java:2555) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.negatedExpression(HqlBaseParser.java:2519) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalAndExpression(HqlBaseParser.java:2435) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalOrExpression(HqlBaseParser.java:2400) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.expression(HqlBaseParser.java:2113) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.logicalExpression(HqlBaseParser.java:1891) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.whereClause(HqlBaseParser.java:495) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:751) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:316) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:283) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.query.spi.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:157) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.checkNamedQueries(SessionFactoryImpl.java:525) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:445) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at com.bookapp.dao.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:17) [bin/:?]
+	at com.mapping.one_to_one.bi.MainTesterOneToOne.main(MainTesterOneToOne.java:13) [bin/:?]
+ERROR | 2020-11-26 19:17:58 | [main] internal.SessionFactoryImpl (SessionFactoryImpl.java:325) - HHH000177: Error in named query: findCustomerById
+org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token: : near line 1, column 53 [select c from com.demo.queries.Customer c where c.id:=id]
+	at org.hibernate.hql.internal.ast.QuerySyntaxException.convert(QuerySyntaxException.java:74) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:91) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:292) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:186) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:141) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:77) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:153) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.query.spi.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:157) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.checkNamedQueries(SessionFactoryImpl.java:525) ~[hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:445) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) [hibernate-core-5.2.9.Final.jar:5.2.9.Final]
+	at com.bookapp.dao.HibernateSessionFactory.getSessionFactory(HibernateSessionFactory.java:17) [bin/:?]
+	at com.mapping.one_to_one.bi.MainTesterOneToOne.main(MainTesterOneToOne.java:13) [bin/:?]
+INFO  | 2020-11-26 19:17:58 | [main] internal.DriverManagerConnectionProviderImpl (DriverManagerConnectionProviderImpl.java:230) - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/mapping_hib?useSSL=false]

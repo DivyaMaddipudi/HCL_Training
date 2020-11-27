@@ -15,10 +15,9 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.bookapp.exception.BookNotFoundException;
-import com.bookapp.exception.DataAccessException;
 
 
 @Primary
@@ -84,7 +83,7 @@ public class BookDaoImpl implements BookDao{
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new DataAccessException(e.getMessage());
+			
 		}
 		
 		
@@ -144,7 +143,7 @@ public class BookDaoImpl implements BookDao{
 		
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new DataAccessException(e.getMessage());
+			throw new DataAccessException(e.getMessage()) {};
 		}
 		return book;
 	}

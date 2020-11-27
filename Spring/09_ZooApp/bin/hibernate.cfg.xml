@@ -20,8 +20,22 @@
 		<!-- jdbc connection pool build in  -->
 		<property name="connection.pool_size">1</property>
 		 <property name="current_session_context_class">thread</property>
-		 <mapping class="com.many_to_many.bi.Employee" />
-		 <mapping class="com.many_to_many.bi.Project" />
+		 
+		 <!-- <mapping class="com.mapping.one_to_one.bi.Employee" />
+		 <mapping class="com.mapping.one_to_one.bi.Parking" />  -->
+		
+		<mapping class="com.zooapp.Staff" />	
+		<mapping class="com.zooapp.Cage" />
+		<mapping class="com.zooapp.Animal" />
+		<mapping class="com.zooapp.Category" />
+		<mapping class="com.zooapp.FoodItem" />
+		<mapping class="com.zooapp.Supplier" />
+		<mapping class="com.zooapp.VET" />
+		<mapping class="com.zooapp.InHouseVet" />
+		<mapping class="com.zooapp.ExternalVet" />
+		<mapping class="com.zooapp.Emergency" />
+		
+			
 		
 	</session-factory>
 </hibernate-configuration>
