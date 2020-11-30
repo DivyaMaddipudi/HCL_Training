@@ -19,7 +19,6 @@ import org.springframework.stereotype.Repository;
 import com.bookapp.exception.BookNotFoundException;
 import com.bookapp.exception.DataAccessException;
 
-@Primary
 @Repository
 public class BookDaoImpl implements BookDao{
 	

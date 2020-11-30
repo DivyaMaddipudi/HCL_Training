@@ -1,14 +1,18 @@
 package com.bookapp.service;
 
 import java.util.List;
+
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bookapp.dao.Book;
 import com.bookapp.dao.BookDao;
 import com.bookapp.service.aspects.Loggable;
 
 @Service(value = "bookService")
+@Transactional
 public class BookServiceImpl implements BookService{
 
 	

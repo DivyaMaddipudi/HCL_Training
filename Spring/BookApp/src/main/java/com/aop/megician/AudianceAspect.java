@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 public class AudianceAspect {
 	
 	@Before("execution(public void doMagic())")
-	public void z() {
-		System.out.println("a");
+	public void clapping() {
+		System.out.println("clapping");
 	}
 	
 	@Before("execution(public void doMagic())")
-	public void b() {
-		System.out.println("b");
+	public void sitting() {
+		System.out.println("sitting");
 	}
 
 }

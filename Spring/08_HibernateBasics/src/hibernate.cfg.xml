@@ -24,7 +24,7 @@
 		 <mapping class="com.demo.inheritance.table_per_concrete.SavingAccount" />
 		 <mapping class="com.demo.inheritance.table_per_concrete.CurrentAccount" /> -->
 		
-		<mapping class="com.demo.queries.Customer" />
+		<mapping class="com.demo.Book" />
 		
 	</session-factory>
 </hibernate-configuration>

@@ -2,8 +2,6 @@ package com.annotation;
 
 import java.lang.reflect.Modifier;
 
-import com.google.protobuf.Method;
-
 class MyFoo {
 	
 	@MyAnno(hello = "we all are champ", isDone = true)

@@ -71,7 +71,7 @@ h2 {
 	
 	<tr>
 		<td>${book.id}</td>
-		<td><c:out value="${book.isbn}"></c:out> </td>
+		<td>${book.isbn}</td>
 		<td><c:out value="${book.title}"></c:out> </td>
 		<td><c:out value="${book.author}"></c:out> </td>
 		<td><c:out value="${book.pubDate}"></c:out> </td>

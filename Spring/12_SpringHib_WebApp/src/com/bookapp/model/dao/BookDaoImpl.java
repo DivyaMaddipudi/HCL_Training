@@ -6,8 +6,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
-
 @Repository
 public class BookDaoImpl implements BookDao{
 
@@ -26,13 +24,7 @@ public class BookDaoImpl implements BookDao{
 
 	@Override
 	public List<Book> getAllBooks() {
-		System.out.println("----------------------dao get all ------------------------------------");
 		List<Book> books = getSession().createQuery("select b from Book b").list();
-		
-		for(Book book : books) {
-			System.out.println(book);
-		}
-		
 		return books;
 	}
 
