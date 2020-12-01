@@ -10,6 +10,11 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<context:component-scan base-package="com.bookapp.model"/>
+	
+	<!-- it force to convert all db related error to be wrapped by data access exceptions so that i can write aop
+		based handler to handle it without thinking whether i am using hibernate, jdbc.....
+	 -->
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"></bean>
 	<context:property-placeholder location="classpath:db.properties"/>
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

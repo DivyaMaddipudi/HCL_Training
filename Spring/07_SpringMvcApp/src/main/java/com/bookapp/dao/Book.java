@@ -2,6 +2,9 @@ package com.bookapp.dao;
 
 import java.util.Date;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Book {
@@ -13,6 +16,9 @@ public class Book {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date pubDate;
 	private double price;
+	
+	@Enumerated(EnumType.STRING)
+	private BookType bookType;
 	
 	public Book() {
 		
@@ -35,6 +41,14 @@ public class Book {
 		this.author = author;
 		this.pubDate = pubDate;
 		this.price = price;
+	}
+	
+	public BookType getBookType() {
+		return bookType;
+	}
+
+	public void setBookType(BookType bookType) {
+		this.bookType = bookType;
 	}
 
 	public int getId() {

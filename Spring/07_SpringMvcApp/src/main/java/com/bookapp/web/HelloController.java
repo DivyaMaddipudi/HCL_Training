@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bookapp.dao.Book;
+import com.bookapp.dao.BookType;
 import com.bookapp.service.BookService;
 
 
@@ -76,4 +77,9 @@ public class HelloController {
 		return "updatebookpage";
 	}
 	
+	
+	@ModelAttribute(value = "booktypes")
+	public BookType[] bookType() {
+		return BookType.values();
+	}
 }

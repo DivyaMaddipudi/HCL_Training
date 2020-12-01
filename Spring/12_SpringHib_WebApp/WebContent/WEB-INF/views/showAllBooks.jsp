@@ -53,7 +53,11 @@ h2 {
 <body>
 <br>
 <h2>Welcome</h2> <br>
+<h4><a href="logout">Logout</a></h4>
 
+
+<h4><a href="addaccount">Add Account</a></h4>
+<h4><a href="updateaccount">Update Account</a></h4>
 <table>
 	<tr>
 		<th>id</th>
@@ -62,8 +66,8 @@ h2 {
 		<th>author</th>
 		<th>publish date</th>
 		<th>price</th>
+		<th>Type</th>
 		<th>Delete</th>
-		
 		<th>Update</th>
 		
 	</tr>
@@ -76,6 +80,7 @@ h2 {
 		<td><c:out value="${book.author}"></c:out> </td>
 		<td><c:out value="${book.pubDate}"></c:out> </td>
 		<td><c:out value="${book.price}"></c:out> </td>
+		<td><c:out value="${book.bookType}"></c:out> </td>
 		<td><a href="deletebook?id=${book.id}">delete book</a></td>
 		<td><a href="updatebook?id=${book.id}">update book</a></td>
 		

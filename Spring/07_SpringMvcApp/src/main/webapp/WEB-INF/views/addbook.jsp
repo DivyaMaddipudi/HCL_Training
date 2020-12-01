@@ -38,6 +38,11 @@
 				<td>Enter price:</td>
 				<td><form:input path="price" /></td>
 			</tr>
+			
+			<tr>
+				<td>Select book type</td>
+				<td><form:select path="bookType" items="${booktypes}"></form:select> </td>
+			</tr>
 
 			<tr>
 				<td><input type="submit" value="add book" /></td>

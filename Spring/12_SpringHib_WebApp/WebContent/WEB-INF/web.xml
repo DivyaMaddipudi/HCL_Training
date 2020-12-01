@@ -7,7 +7,12 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/web-config.xml</param-value>
+			<param-value>classpath:web-config.xml</param-value>
+		</init-param>
+		<!-- hey spring mvc if resource is not found plz throw the exception ill handle it using aop -->
+		<init-param>
+			<param-name>throwExceptionIfNoHandlerFound</param-name>
+			<param-value>true</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -20,7 +25,7 @@
 	<!-- needed for ContextLoaderListener -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/model-config.xml</param-value>
+		<param-value>classpath:model-config.xml</param-value>
 	</context-param>
 
 	<!-- Bootstraps the root web application context before servlet initialization -->

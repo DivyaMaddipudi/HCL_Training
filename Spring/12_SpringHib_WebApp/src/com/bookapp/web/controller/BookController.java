@@ -3,21 +3,30 @@ package com.bookapp.web.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bookapp.model.dao.Book;
+import com.bookapp.model.dao.BookNotFoundException;
+import com.bookapp.model.dao.BookType;
 import com.bookapp.model.service.BookService;
 
 @Controller
 public class BookController {
-	
 	private BookService bookService;
 
 	@Autowired
@@ -25,11 +34,7 @@ public class BookController {
 		this.bookService = bookService;
 	}
 	
-	@GetMapping("/")
-	public String home() {
-		return "redirect:/allbooks";
-	}
-	
+
 	@GetMapping("allbooks")
 	public ModelAndView allBooks(ModelAndView mv) {
 		List<Book> books = bookService.getAllBooks();
@@ -48,13 +53,19 @@ public class BookController {
 	}
 	
 	@PostMapping("addbook")
-	public String addBookPost(@ModelAttribute(name="book") Book book) {
+	public String addBookPost(@Valid @ModelAttribute(name="book") Book book, BindingResult bindingResult) {
+		
+		if(bindingResult.hasErrors()) {
+			//hey spring if there is a validation error go back to addbook.jsp
+			return "addbook";
+		} else {
 		if(book.getId() == 0) {
 			bookService.addBook(book);
 		} else {
 			bookService.updateBook(book.getId(), book);
 		}
 		return "redirect:/allbooks";
+		}
 	}
 	
 	//delete
@@ -74,4 +85,19 @@ public class BookController {
 		return "updatebookpage";
 	}
 	
+	
+	//hey spring mvc plz execute this method for every req and put this return values of this
+	//method into req scope in a variable named "booktypes"
+	@ModelAttribute(value = "booktypes")
+	public BookType[] bookType() {
+		return BookType.values();
+	}
+	
+	@ExceptionHandler(BookNotFoundException.class)
+	public ModelAndView bookNotFoundExHandler(HttpServletRequest req, Exception ex ) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("booknotfound");
+		mv.addObject("error", ex.getMessage());
+		return mv;
+	}
 }
