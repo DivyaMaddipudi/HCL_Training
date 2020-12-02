@@ -41,3 +41,10 @@ INFO  | 2020-11-30 07:23:52 | [main] dialect.Dialect (Dialect.java:157) - HHH000
 INFO  | 2020-11-30 07:23:52 | [main] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.0.Final
 INFO  | 2020-11-30 07:23:53 | [main] internal.QueryTranslatorFactoryInitiator (QueryTranslatorFactoryInitiator.java:47) - HHH000397: Using ASTQueryTranslatorFactory
 INFO  | 2020-11-30 07:23:54 | [main] aspects.LoggingAspect (LoggingAspect.java:24) - time taken192
+INFO  | 2020-12-02 09:54:49 | [main] hibernate.Version (Version.java:45) - HHH000412: Hibernate Core {5.2.9.Final}
+INFO  | 2020-12-02 09:54:49 | [main] cfg.Environment (Environment.java:213) - HHH000206: hibernate.properties not found
+INFO  | 2020-12-02 09:54:49 | [main] java.JavaReflectionManager (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+INFO  | 2020-12-02 09:54:49 | [main] dialect.Dialect (Dialect.java:157) - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+INFO  | 2020-12-02 09:54:50 | [main] util.Version (Version.java:27) - HV000001: Hibernate Validator 5.1.0.Final
+INFO  | 2020-12-02 09:54:52 | [main] internal.QueryTranslatorFactoryInitiator (QueryTranslatorFactoryInitiator.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+INFO  | 2020-12-02 09:54:52 | [main] aspects.LoggingAspect (LoggingAspect.java:24) - time taken425com.bookapp.service.BookService

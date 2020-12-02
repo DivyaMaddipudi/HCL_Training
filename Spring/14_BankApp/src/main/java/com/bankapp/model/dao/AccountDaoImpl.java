@@ -28,26 +28,38 @@ public class AccountDaoImpl implements AccountDao{
 
 	@Override
 	public Account updateAccount(Account account) {
-		Account accountToBeUpdated = getAccountByIf(account.getAccountId());
+
+		Account accountToBeUpdated = getAccountById(account.getAccountId());
+		
+		accountToBeUpdated.setAddress(account.getAddress());
+		accountToBeUpdated.setEmail(account.getEmail());
+		accountToBeUpdated.setPhone(account.getPhone());
+		accountToBeUpdated.setAccountStatus(account.getAccountStatus());
 		getSession().update(accountToBeUpdated);
-		return accountToBeUpdated;
+		
+		getSession().update(account);
+		
+		
+		return account;
 	}
 
 	@Override
 	public Account deleteAccount(int accountId) {
-		Account accountToBeDeleted = getAccountByIf(accountId);
-		getSession().delete(accountToBeDeleted);
+		Account accountToBeDeleted = getAccountById(accountId);
+		accountToBeDeleted.setAccountStatus(AccountStatus.Suspended);
+		getSession().update(accountToBeDeleted);
 		return accountToBeDeleted;
 	}
 
 	@Override
-	public Account getAccountByIf(int accountId) {
+	public Account getAccountById(int accountId) {
 		Account account = getSession().get(Account.class, accountId);
 		return account;
 	}
 
 	@Override
 	public Account addAccount(Account account) {
+		account.setAccountStatus(AccountStatus.Activate);
 		getSession().save(account);
 		return account;
 	}

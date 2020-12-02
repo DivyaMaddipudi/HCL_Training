@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<br>
-Money ${message} successfully <br>
-Click here to go to <a href="home">Home</a>
+<h3>Invalid entries or error may be due to data base</h3>
 </body>
 </html>

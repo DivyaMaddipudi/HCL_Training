@@ -1,9 +1,0 @@
-package day_1_hcl;
-
-public class Account {
-	
-	private int id;
-	private String name;
-	
-
-}

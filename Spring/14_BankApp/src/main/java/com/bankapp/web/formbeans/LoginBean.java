@@ -4,7 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class LoginBean {
 
-	@NotEmpty(message = "User Role can not be left blank")
+	@NotEmpty(message = "Username can not be left blank")
 	private String username;
 
 	@NotEmpty(message = "Password can not be left blank")

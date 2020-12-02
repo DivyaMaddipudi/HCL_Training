@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "user_table")
@@ -17,23 +20,29 @@ public class User {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Integer uid;
 	 
-	 
+	 @NotEmpty(message = "username can not be left blank")
+	 @Column(unique = true, nullable = false)
 	 private String username;
 	 
-	 
+	 @NotEmpty(message = "password can not be left blank")
 	 private String password;
 	 
 	 @Enumerated(EnumType.STRING)
+	 @NotBlank(message = "enum can not be left blank")
 	 private UserType userType;
 	 
 	 @Column(nullable = false)
+	 @NotEmpty(message = "address can not be left blank")
 	 private String address;
 	 
-	 @Column(unique = true, nullable = false)
+	 @Column(nullable = false)
+	 @NotEmpty(message = "phone can not be left blank")
 	 private String phone;
 	 
-	 @Column(unique = true, nullable = false)
+	 @Column(nullable = false)
+	 @NotEmpty(message = "email can not be left blank")
 	 private String  email;
+	 
 	 
 	public User() {
 	}

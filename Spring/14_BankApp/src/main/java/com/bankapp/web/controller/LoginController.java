@@ -42,19 +42,25 @@ public class LoginController {
 			HttpSession session = req.getSession();
 			String username = loginBean.getUsername();
 			String password = loginBean.getPassword();
-			User user = userService.getUser(username, password);
-			session.setAttribute("user", user);
-			System.out.println("---------------------------------------------------------");
-			System.out.println(user);
-			return "redirect:/home";
+			if(userService.getUser(username).getUsername() != null) {
+				User user = userService.getUser(username);
+				if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+					session.setAttribute("user", user);
+					return "redirect:/home";
+				} else {
+					req.setAttribute("message", "Incorrect username or password");
+					return "login";
+				}
+			} else {
+				req.setAttribute("message", "No account for the provided username and password");
+				return "login";
+			}
 		}
 	}
 	
 	@GetMapping("logout")
 	public String logout(HttpServletRequest req) {
-
 		HttpSession session = req.getSession(false);
-		
 		if(session != null) {
 			session.invalidate();
 		}

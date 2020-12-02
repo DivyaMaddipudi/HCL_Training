@@ -1,3 +1,6 @@
+
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -8,28 +11,25 @@
 <title>Add User</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css"
     rel="stylesheet">
-<style type="text/css">
-.error {
-	color: red;
-}
-</style>
 </head>
 <body>
-<h3>Add User</h3>
+<br>
+<h2>Update user</h2> <br>
 <form:form action="adduser" method="post" modelAttribute="userBean">
 	
 	<table>
 			<tr>
-				<td><form:hidden path = "uid" value = "0" /></td>
+				<td><form:hidden path = "uid" value = "${userBean.uid}" /></td>
 			</tr>
+			
 			<tr>
 				<td>Enter username:</td>
-				<td><form:input path="username" /><form:errors path="username" class="error"></form:errors> </td>
+				<td><form:input path="username" readonly="true" /><form:errors path="password" class="error"></form:errors></td>
 			</tr>
-
+			
 			<tr>
 				<td>Enter password:</td>
-				<td><form:input path="password" /><form:errors path="password" class="error"></form:errors></td>
+				<td><form:input path="password" readonly="true" /><form:errors path="password" class="error"></form:errors></td>
 			</tr>
 
 			<tr>
@@ -54,7 +54,7 @@
 			
 
 			<tr>
-				<td><input type="submit" value="add user" /></td>
+				<td><input type="submit" value="update user" /></td>
 			</tr>
 		</table>
 	

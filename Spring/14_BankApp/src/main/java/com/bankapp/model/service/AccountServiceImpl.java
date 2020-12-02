@@ -1,5 +1,6 @@
 package com.bankapp.model.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -9,8 +10,10 @@ import org.springframework.stereotype.Service;
 
 import com.bankapp.model.dao.Account;
 import com.bankapp.model.dao.AccountDao;
+import com.bankapp.model.dao.TransactionEntry;
 import com.bankapp.model.dao.TransactionEntryDao;
 import com.bankapp.model.dao.TxType;
+import com.bankapp.model.service.aspects.Loggable;
 
 @Service("accountService")
 @Transactional
@@ -33,36 +36,59 @@ public class AccountServiceImpl implements AccountService{
 		return accountDao.getAllAccounts();
 	}
 
-
+	@Loggable
 	@Override
 	public void deposit(int accountId, double amount) {
-		Account account = accountDao.getAccountByIf(accountId);
+		Account account = accountDao.getAccountById(accountId);
 		account.setBalance(account.getBalance() + amount);
 		accountDao.updateAccount(account);
 		account.setTransactionEntry(transactionEntryDao.getTransactionsById(accountId));
-		transactionEntryService.addTransaction("deposit to " + accountId , amount, TxType.DEPOSIT);
+		
+		TransactionEntry entry = new TransactionEntry("Deposited to " + accountId , amount, TxType.DEPOSIT);
+		account.getTransactionEntry().add(entry);
+		accountDao.updateAccount(account);
+		
+//		transactionEntryService.addTransaction("deposit to " + accountId , amount, TxType.DEPOSIT);
+//		account.setTransactionEntry(Arrays.asList(transactionEntryDao.addTransaction("deposit to " + accountId , amount, TxType.WITHDRAW)));
+		
 	}
 
+	@Loggable
 	@Override
 	public void withdraw(int accountId, double amount) {
-		Account account = accountDao.getAccountByIf(accountId);
+		Account account = accountDao.getAccountById(accountId);
 		account.setBalance(account.getBalance() - amount);
 		accountDao.updateAccount(account);
-		account.setTransactionEntry(transactionEntryDao.getTransactionsById(accountId));
-		transactionEntryService.addTransaction("withdraw from " + accountId , amount, TxType.WITHDRAW);
+		
+		TransactionEntry entry = new TransactionEntry("Withdraw from " + accountId , amount, TxType.WITHDRAW);
+		account.getTransactionEntry().add(entry);
+		accountDao.updateAccount(account);
 	}
-
+	
+	@Loggable
 	@Override
 	public void transfer(int fromAccountId, int toAccountId, double amount) {
-		withdraw(fromAccountId, amount);
-		deposit(toAccountId, amount);
-		transactionEntryService.addTransaction("Transfer from " + fromAccountId , amount, TxType.TRANSFER);
+		Account fromAccount = accountDao.getAccountById(fromAccountId);
+		Account toAccount = accountDao.getAccountById(toAccountId);
+		
+		fromAccount.setBalance(fromAccount.getBalance() - amount);
+		toAccount.setBalance(toAccount.getBalance() + amount);
+		accountDao.updateAccount(fromAccount);
+		accountDao.updateAccount(toAccount);
+		
+		TransactionEntry entryFrom = new TransactionEntry("Transferred from " + fromAccountId + " to " + toAccountId , amount, TxType.TRANSFER);
+		TransactionEntry entryTo = new TransactionEntry("Credited to your account with account number " + toAccountId + " from account number " + fromAccountId , amount, TxType.TRANSFER);
+		fromAccount.getTransactionEntry().add(entryFrom);
+		toAccount.getTransactionEntry().add(entryTo);
+		accountDao.updateAccount(fromAccount);
+		accountDao.updateAccount(toAccount);
+		
 		
 	}
 
 	@Override
 	public Account updateAccount(Account account) {
-		Account accountToBeUpdated = accountDao.getAccountByIf(account.getAccountId());
+		Account accountToBeUpdated = accountDao.getAccountById(account.getAccountId());
 		accountToBeUpdated.setEmail(account.getEmail());
 		accountToBeUpdated.setPhone(account.getPhone());
 		accountToBeUpdated.setAddress(account.getAddress());
@@ -77,8 +103,8 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	@Override
-	public Account getAccountByIf(int accountId) {
-		return accountDao.getAccountByIf(accountId);
+	public Account getAccountById(int accountId) {
+		return accountDao.getAccountById(accountId);
 	}
 
 	@Override

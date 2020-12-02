@@ -1,9 +1,0 @@
-package day_1_hcl;
-
-public class PrintNextDate {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}

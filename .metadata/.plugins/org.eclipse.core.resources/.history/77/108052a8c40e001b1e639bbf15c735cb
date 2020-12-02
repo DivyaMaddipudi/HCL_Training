@@ -1,9 +1,0 @@
-package lab_assignment_1;
-
-public class FibanocciAvg {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}

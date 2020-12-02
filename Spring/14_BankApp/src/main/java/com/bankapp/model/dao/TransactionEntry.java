@@ -30,7 +30,7 @@ public class TransactionEntry {
 	
     private String txInfo;
     
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;
     
     private Double amount;

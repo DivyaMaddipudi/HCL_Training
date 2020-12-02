@@ -9,9 +9,15 @@
 <title>LogIn</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css"
     rel="stylesheet">
+<style type="text/css">
+.error, h4 {
+	color:red;
+}
+</style>
 </head>
 <body>
 <br>
+<h4>${message}</h4>
 	<form:form action="login" method="post" modelAttribute="loginBean">
 		<table>
 			<tr>

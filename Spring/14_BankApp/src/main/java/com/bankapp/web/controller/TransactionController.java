@@ -1,5 +1,9 @@
 package com.bankapp.web.controller;
 
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder.In;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +15,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bankapp.model.dao.Account;
+import com.bankapp.model.dao.TransactionEntry;
 import com.bankapp.model.service.AccountService;
+import com.bankapp.model.service.TransactionEntryService;
 import com.bankapp.web.formbeans.TransferBean;
 import com.bankapp.web.formbeans.WithdrawBean;
 
@@ -20,17 +25,20 @@ import com.bankapp.web.formbeans.WithdrawBean;
 public class TransactionController {
 	
 	private AccountService accountService;
+	private TransactionEntryService transactionEntryService;
 	
 	@Autowired
-	public TransactionController(AccountService accountService) {
+	public TransactionController(AccountService accountService, TransactionEntryService transactionEntryService) {
 		this.accountService = accountService;
+		this.transactionEntryService = transactionEntryService;
 	}
 	
 	@GetMapping("/home")
 	public String home() {
 		return "home";
 	}
-	
+
+
 	@GetMapping("transfer")
 	public String transferGet(ModelMap map) {
 		map.addAttribute("transferBean", new TransferBean());
@@ -85,5 +93,15 @@ public class TransactionController {
 		accountService.deposit(accountId, amount);
 		return "success";
 		}
+	}
+	
+	@GetMapping("getalltransactions")
+	public ModelAndView transactionsHistory(HttpServletRequest request, ModelAndView mv) {
+		int accountId = Integer.parseInt(request.getParameter("id"));
+		System.out.println("transaction id--------------------------------------------- "+ accountId);
+		List<TransactionEntry> transactionHistory = transactionEntryService.getTransactionsById(accountId);
+		mv.setViewName("transactionhistory");
+		mv.addObject("transactionHistory", transactionHistory);
+		return mv;
 	}
 }

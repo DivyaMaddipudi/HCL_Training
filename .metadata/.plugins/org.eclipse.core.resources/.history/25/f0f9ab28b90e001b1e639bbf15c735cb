@@ -1,9 +1,0 @@
-package day_1_hcl;
-
-public class ExpOnIdentityMatrix {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}

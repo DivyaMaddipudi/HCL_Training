@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Transfer</title>
+<title>Deposit</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css"
     rel="stylesheet">
 </head>
 <body>
-
+<h3>Deposit money</h3>
 <h3>Welcome</h3>
 	<form:form action="withdraw" method="post" modelAttribute="depositBean">
 		<table>
@@ -27,12 +27,9 @@
 			</tr>
 			
 			<tr>
-				<td><input type="submit" value="transfer amount"></td>
+				<td><input type="submit" value="deposit amount"></td>
 			</tr>
-			
-		
 		</table>
-	
 	</form:form>
 
 </body>

@@ -11,7 +11,7 @@
     rel="stylesheet">
 </head>
 <body>
-<h3>Welcome</h3>
+<h3>Deposit amount</h3>
 	<form:form action="withdraw" method="post" modelAttribute="withdrawBean">
 		<table>
 			
@@ -26,7 +26,7 @@
 			</tr>
 			
 			<tr>
-				<td><input type="submit" value="transfer amount"></td>
+				<td><input type="submit" value="withdraw amount"></td>
 			</tr>
 			
 		

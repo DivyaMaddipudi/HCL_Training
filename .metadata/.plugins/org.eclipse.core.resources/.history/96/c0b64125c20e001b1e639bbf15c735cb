@@ -1,7 +1,0 @@
-package day_1_hcl;
-
-public class DemoAbstractionAndEncapInRealLife {
-	int id;
-	String name;
-	double salary;
-}

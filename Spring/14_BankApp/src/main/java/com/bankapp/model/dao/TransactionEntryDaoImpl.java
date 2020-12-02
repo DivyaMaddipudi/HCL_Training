@@ -2,6 +2,8 @@ package com.bankapp.model.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,15 +24,17 @@ public class TransactionEntryDaoImpl implements TransactionEntryDao{
 	}
 	
 	@Override
-	public TransactionEntry addTransaction(String txInfo, Double amount, TxType txType) {
+	public  TransactionEntry addTransaction(String txInfo, Double amount, TxType txType) {
 		TransactionEntry transactionEntry = new TransactionEntry(txInfo, amount, txType);
-		getSession().save(transactionEntry);
+		getSession().persist(transactionEntry);
 		return transactionEntry;
 	}
 
 	@Override
 	public List<TransactionEntry> getTransactionsById(int accountId) {
-		List<TransactionEntry> transactionEntries = (List<TransactionEntry>) getSession().get(TransactionEntry.class, accountId);
+		Query query = getSession().createNativeQuery("select * from transaction_table t where t.account_id_fk=:accountId", TransactionEntry.class);
+		query.setParameter("accountId", accountId);
+		List<TransactionEntry> transactionEntries = query.getResultList();
 		return transactionEntries;
 	}
 }

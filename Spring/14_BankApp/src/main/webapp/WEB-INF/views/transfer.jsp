@@ -11,11 +11,11 @@
     rel="stylesheet">
 </head>
 <body>
-<h3>Welcome</h3>
+<h3>Transfer amount</h3>
 	<form:form action="transfer" method="post" modelAttribute="transferBean">
 		<table>
 			<tr>
-				<td>Enter to account number:</td>
+				<td>Enter from account number:</td>
 				<td><form:input path="fromAccountId"/><form:errors path="fromAccountId" class="error"></form:errors></td>
 			</tr>
 			

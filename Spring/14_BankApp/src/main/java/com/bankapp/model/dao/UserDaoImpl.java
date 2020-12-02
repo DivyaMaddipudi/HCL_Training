@@ -37,20 +37,40 @@ public class UserDaoImpl implements UserDao{
 
 	@Override
 	public User deleteUser(User user) {
-		User userToBeDeleted = getUser(user.getUsername(), user.getPassword());
+		User userToBeDeleted = getUserById(user.getUid());
 		getSession().delete(userToBeDeleted);
 		return userToBeDeleted;
 	}
 
 	@Override
-	public User updateUser(User user) {
-		User userToBeUpdated = getUser(user.getUsername(), user.getPassword());
-		getSession().update(user);
+	public User updateUser(int uid, User user) {
+		User userToBeUpdated = getUserById(uid);
+		userToBeUpdated.setAddress(user.getAddress());
+		userToBeUpdated.setEmail(user.getEmail());
+		userToBeUpdated.setPhone(user.getPhone());
+		userToBeUpdated.setUserType(user.getUserType());
+		getSession().update(userToBeUpdated);
 		return user;
 	}
 
 	@Override
-	public User getUser(String username, String password) {
+	public User getUser(String username) {
+		Query query = getSession().createQuery("from User where username=:username1");
+		query.setParameter("username1", username);
+		User user = (User) query.getSingleResult();
+		System.out.println("--------------------------------------------------");
+		System.out.println(user);
+		return user;
+	}
+
+	@Override
+	public User getUserById(int accountId) {
+		User user = getSession().get(User.class, accountId);
+		return user;
+	}
+
+	@Override
+	public User getUserDetails(String username, String password) {
 		Query query = getSession().createQuery("from User where username=:username1 and password=:password1");
 		query.setParameter("username1", username);
 		query.setParameter("password1", password);

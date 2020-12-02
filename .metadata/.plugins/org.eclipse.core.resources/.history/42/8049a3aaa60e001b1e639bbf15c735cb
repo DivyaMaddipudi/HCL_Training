@@ -1,9 +1,0 @@
-package day_1_hcl;
-
-public class DemoPrime {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}
