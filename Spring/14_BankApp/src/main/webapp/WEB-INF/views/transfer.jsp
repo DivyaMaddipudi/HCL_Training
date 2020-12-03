@@ -14,15 +14,25 @@
 <h3>Transfer amount</h3>
 	<form:form action="transfer" method="post" modelAttribute="transferBean">
 		<table>
+			<c:if test="${sessionScope.user.userType == 'Admin' || sessionScope.user.userType == 'Mgr' || sessionScope.user.userType == 'Clerk'}">
 			<tr>
 				<td>Enter from account number:</td>
 				<td><form:input path="fromAccountId"/><form:errors path="fromAccountId" class="error"></form:errors></td>
 			</tr>
+			</c:if>
+			
+			<c:if test="${sessionScope.user.userType != 'Admin' || sessionScope.user.userType != 'Mgr' || sessionScope.user.userType != 'Clerk'}">
+			<tr>
+				<td>Enter from account number:</td>
+				<td><form:input path="fromAccountId" value="${sessionScope.account.accountNumber}" readonly="true"/><form:errors path="fromAccountId" class="error"></form:errors></td>
+			</tr>
+			</c:if>
 			
 			<tr>
 				<td>Enter to account number:</td>
 				<td><form:input path="toAccountId"/><form:errors path="toAccountId" class="error"></form:errors> </td>
 			</tr>
+			
 			
 			<tr>
 				<td>Enter amount to be transferred:</td>
