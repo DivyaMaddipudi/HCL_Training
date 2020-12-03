@@ -17,6 +17,7 @@
 </head>
 <body>
 <br>
+<h3>Customer account login</h3>
 <h4>${message}</h4>
 	<form:form action="customerlogin" method="post" modelAttribute="customerBean">
 		<table>

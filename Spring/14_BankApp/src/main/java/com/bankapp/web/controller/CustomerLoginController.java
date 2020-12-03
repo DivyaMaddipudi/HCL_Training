@@ -1,11 +1,11 @@
 package com.bankapp.web.controller;
 
-import javax.naming.Binding;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,14 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bankapp.model.dao.Account;
-import com.bankapp.model.dao.User;
 import com.bankapp.model.service.AccountService;
 import com.bankapp.web.formbeans.LoginBean;
-import com.bankapp.web.formbeans.UserBean;
 
+@Controller
 public class CustomerLoginController {
-	
-
 	private AccountService accountService;
 	
 	@Autowired
@@ -35,7 +32,7 @@ public class CustomerLoginController {
 		return "customerlogin";
 	}
 	
-	@PostMapping("logincustomer")
+	@PostMapping("customerlogin")
 	public String customerLoginPost(@Valid @ModelAttribute("customerBean") LoginBean customerBean, BindingResult result, HttpServletRequest req) {
 		if(result.hasErrors()) {
 			return "customerlogin";
@@ -62,5 +59,16 @@ public class CustomerLoginController {
 			}
 		}
 	}
-
+	
+	
+	@GetMapping("customerlogout")
+	public String logout(HttpServletRequest req) {
+		HttpSession session = req.getSession(false);
+		System.out.println("==================logout===========");
+		System.out.println(session.getAttribute("account"));
+		if(session != null) {
+			session.invalidate();
+		}
+		return "redirect:/";
+	}
 }

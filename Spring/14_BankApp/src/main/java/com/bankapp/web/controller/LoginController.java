@@ -25,7 +25,12 @@ public class LoginController {
 	public LoginController(UserService userService) {
 		this.userService = userService;
 	}
-
+	
+	@GetMapping("/")
+	public String home() {
+		return "index";
+	}
+	
 	@GetMapping("userlogin")
 	public String home(ModelMap map) {
 		map.addAttribute("loginBean", new LoginBean());
@@ -61,7 +66,7 @@ public class LoginController {
 		}
 	}
 	
-	@GetMapping("app/logout")
+	@GetMapping("logout")
 	public String logout(HttpServletRequest req) {
 		HttpSession session = req.getSession(false);
 		System.out.println("==================logout===========");

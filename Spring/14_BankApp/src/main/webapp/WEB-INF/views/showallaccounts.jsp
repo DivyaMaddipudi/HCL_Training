@@ -57,12 +57,14 @@ h2 {
 <table>
 	<tr>
 		<th>Name</th>
-		<th>Balance</th>
+		<th>Account Number</th>
 		<th>Address</th>
 		<th>Phone</th>
 		<th>Email</th>
 		<th>Aadhar Card Number</th>
 		<th>PAN Number</th>
+		<th>Balance</th>
+		
 		
 		<c:if test="${sessionScope.user.userType == 'Admin' || sessionScope.user.userType == 'Mgr' }">
 		<th>Delete Account</th>
@@ -77,12 +79,13 @@ h2 {
 	<c:forEach var="account" items="${allaccounts}">
 	<tr>
 		<td>${account.name}</td>
-		<td><c:out value="${account.balance}"></c:out> </td>
+		<td><c:out value="${account.accountNumber}"></c:out></td>
 		<td><c:out value="${account.address}"></c:out> </td>
 		<td><c:out value="${account.phone}"></c:out> </td>
 		<td><c:out value="${account.email}"></c:out> </td>
 		<td><c:out value="${account.aadharCard}"></c:out> </td>
 		<td><c:out value="${account.panNumber}"></c:out> </td>
+		<td><c:out value="${account.balance}"></c:out></td>
 		
 		<c:if test="${sessionScope.user.userType == 'Admin' || sessionScope.user.userType == 'Mgr' }">
 		<td><a href="deleteaccount?id=${account.accountId}">delete account</a></td>

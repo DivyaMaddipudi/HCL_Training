@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.bankapp.model.dao.Account;
 import com.bankapp.model.dao.User;
 
 
@@ -27,14 +28,16 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter{
 		boolean isValid = false; //let assume he is not valid user!
 		System.out.println("==========interceptor===================");
 		System.out.println(session.getAttribute("user"));
+		System.out.println(session.getAttribute("account"));
 		
 		if(session != null) {
 			User user = (User) session.getAttribute("user");
-			if(user != null) {
+			Account account = (Account) session.getAttribute("account");
+			if(user != null || account != null) {
 				isValid = true;
 			} else {
 				isValid = false;
-				response.sendRedirect("/");
+//				response.sendRedirect("/");
 			}
 		}
 		System.out.println(isValid);

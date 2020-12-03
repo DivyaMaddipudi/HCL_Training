@@ -3,7 +3,6 @@ package com.bankapp.model.service;
 import java.util.List;
 
 import com.bankapp.model.dao.Account;
-import com.bankapp.model.dao.User;
 
 public interface AccountService {
 	

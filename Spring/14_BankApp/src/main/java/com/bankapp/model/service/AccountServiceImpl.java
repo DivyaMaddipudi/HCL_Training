@@ -23,15 +23,11 @@ public class AccountServiceImpl implements AccountService{
 
 	private AccountDao accountDao;
 	public TransactionEntryDao transactionEntryDao;
-	private TransactionEntryService transactionEntryService;
-	
 	
 	@Autowired
-	public AccountServiceImpl(AccountDao accountDao, TransactionEntryDao transactionEntryDao,
-			TransactionEntryService transactionEntryService) {
+	public AccountServiceImpl(AccountDao accountDao, TransactionEntryDao transactionEntryDao) {
 		this.accountDao = accountDao;
 		this.transactionEntryDao = transactionEntryDao;
-		this.transactionEntryService = transactionEntryService;
 	}
 
 	@Override
@@ -113,7 +109,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public Account addAccount(Account account) {
-		String accountNumber = "HCL" + "9765" + account.getAccountId();
+		String accountNumber = "HCL" + "976543" + accountDao.getAllAccounts().size();
 		account.setAccountNumber(accountNumber);
 		account.setAccountStatus(AccountStatus.Activate);
 		System.out.println(account + "--------------------service");
