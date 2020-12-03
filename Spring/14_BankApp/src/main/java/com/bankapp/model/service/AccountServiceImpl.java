@@ -1,7 +1,7 @@
 package com.bankapp.model.service;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import javax.transaction.Transactional;
 
@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 
 import com.bankapp.model.dao.Account;
 import com.bankapp.model.dao.AccountDao;
+import com.bankapp.model.dao.AccountStatus;
 import com.bankapp.model.dao.TransactionEntry;
 import com.bankapp.model.dao.TransactionEntryDao;
 import com.bankapp.model.dao.TxType;
+import com.bankapp.model.dao.User;
 import com.bankapp.model.service.aspects.Loggable;
 
 @Service("accountService")
@@ -22,6 +24,7 @@ public class AccountServiceImpl implements AccountService{
 	private AccountDao accountDao;
 	public TransactionEntryDao transactionEntryDao;
 	private TransactionEntryService transactionEntryService;
+	
 	
 	@Autowired
 	public AccountServiceImpl(AccountDao accountDao, TransactionEntryDao transactionEntryDao,
@@ -76,13 +79,13 @@ public class AccountServiceImpl implements AccountService{
 		accountDao.updateAccount(fromAccount);
 		accountDao.updateAccount(toAccount);
 		
-		TransactionEntry entryFrom = new TransactionEntry("Transferred from " + fromAccountId + " to " + toAccountId , amount, TxType.TRANSFER);
+		TransactionEntry entryFrom = new TransactionEntry("Transferred from account " + fromAccountId + " to account " + toAccountId , amount, TxType.TRANSFER);
 		TransactionEntry entryTo = new TransactionEntry("Credited to your account with account number " + toAccountId + " from account number " + fromAccountId , amount, TxType.TRANSFER);
+		
 		fromAccount.getTransactionEntry().add(entryFrom);
 		toAccount.getTransactionEntry().add(entryTo);
 		accountDao.updateAccount(fromAccount);
 		accountDao.updateAccount(toAccount);
-		
 		
 	}
 
@@ -106,9 +109,33 @@ public class AccountServiceImpl implements AccountService{
 	public Account getAccountById(int accountId) {
 		return accountDao.getAccountById(accountId);
 	}
+	
 
 	@Override
 	public Account addAccount(Account account) {
+		String accountNumber = "HCL" + "9765" + account.getAccountId();
+		account.setAccountNumber(accountNumber);
+		account.setAccountStatus(AccountStatus.Activate);
+		System.out.println(account + "--------------------service");
 		return accountDao.addAccount(account);
 	}
+
+	@Override
+	public boolean isCustomerExist(String username) {
+		boolean isValidUser = false;
+		List<Account> accounts = accountDao.getAllAccounts();
+		for(Account account : accounts) {
+			if(account.getName().equals(username)) {
+				isValidUser = true;
+			}
+		}
+		return isValidUser;
+	}
+
+	@Override
+	public Account getAccount(String username) {
+		return accountDao.getAccount(username);
+	}
+
+	
 }

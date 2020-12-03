@@ -26,8 +26,11 @@
 	<mvc:annotation-driven/>
 	
 	<mvc:interceptors>
+	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
 		<mvc:interceptor>
-			<mvc:mapping path="/home"/>
+			<mvc:mapping path="/*"/>
+			<mvc:exclude-mapping path="/index"/>
+			<mvc:exclude-mapping path="/index"/>
 			<bean class="com.bankapp.interceptors.SecurityInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>

@@ -16,7 +16,9 @@
 </head>
 
 <body>
+<br>
 <h3>Add Account</h3>
+<h4><a href="home"> Home </a></h4>
 <form:form action="addaccount" method="post" modelAttribute="addAccountBean">
 	<form:hidden path="accountId" value="0"/>
 	<table>
@@ -28,6 +30,11 @@
 			<td>Enter balance</td>
 			<td><form:input path="balance"/><form:errors path="balance" class="error"/></td>
 		</tr>
+		<tr>
+			<td>Enter password</td>
+			<td><form:input path="passsword"/><form:errors path="passsword" class="error"/></td>
+		</tr>
+		
 		<tr>
 			<td>Enter address</td>
 			<td><form:input path="address"/><form:errors path="address" class="error"/></td>

@@ -3,6 +3,7 @@ package com.bankapp.model.service;
 import java.util.List;
 
 import com.bankapp.model.dao.Account;
+import com.bankapp.model.dao.User;
 
 public interface AccountService {
 	
@@ -16,5 +17,7 @@ public interface AccountService {
 	public Account deleteAccount(int accountId);
 	public Account getAccountById(int accountId);
 	public Account addAccount(Account account);
+	public boolean isCustomerExist(String username);
+	public Account getAccount(String username);
 	
 }

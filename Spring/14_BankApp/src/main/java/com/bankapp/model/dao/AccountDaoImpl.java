@@ -2,6 +2,8 @@ package com.bankapp.model.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,7 @@ public class AccountDaoImpl implements AccountDao{
 		accountToBeUpdated.setEmail(account.getEmail());
 		accountToBeUpdated.setPhone(account.getPhone());
 		accountToBeUpdated.setAccountStatus(account.getAccountStatus());
+		
 		getSession().update(accountToBeUpdated);
 		
 		getSession().update(account);
@@ -59,10 +62,15 @@ public class AccountDaoImpl implements AccountDao{
 
 	@Override
 	public Account addAccount(Account account) {
-		account.setAccountStatus(AccountStatus.Activate);
 		getSession().save(account);
 		return account;
 	}
-	
 
+	@Override
+	public Account getAccount(String username) {
+		Query query = getSession().createQuery("from Account where name=:username1");
+		query.setParameter("username1", username);
+		Account account = (Account) query.getSingleResult();
+		return account;
+	}
 }

@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bankapp.model.dao.Account;
@@ -41,6 +42,8 @@ public class AccountManagementController {
 			return "addaccount";
 		} else {
 			if(addAccountBean.getAccountId() == 0) {
+				System.out.println("--------------------------------------------------------");
+				System.out.println(addAccountBean);
 				accountService.addAccount(addAccountBean);
 			} else {
 				accountService.updateAccount(addAccountBean);

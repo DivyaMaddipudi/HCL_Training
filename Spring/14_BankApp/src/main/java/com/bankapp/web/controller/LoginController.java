@@ -26,8 +26,7 @@ public class LoginController {
 		this.userService = userService;
 	}
 
-	
-	@GetMapping("/")
+	@GetMapping("userlogin")
 	public String home(ModelMap map) {
 		map.addAttribute("loginBean", new LoginBean());
 		return "login";
@@ -42,10 +41,14 @@ public class LoginController {
 			HttpSession session = req.getSession();
 			String username = loginBean.getUsername();
 			String password = loginBean.getPassword();
-			if(userService.getUser(username).getUsername() != null) {
+			
+			if(userService.isUserExist(username)) {
 				User user = userService.getUser(username);
+			
 				if(username.equals(user.getUsername()) && password.equals(user.getPassword())) {
 					session.setAttribute("user", user);
+					System.out.println("=================login==================");
+					System.out.println(session.getAttribute("user"));
 					return "redirect:/home";
 				} else {
 					req.setAttribute("message", "Incorrect username or password");
@@ -58,9 +61,11 @@ public class LoginController {
 		}
 	}
 	
-	@GetMapping("logout")
+	@GetMapping("app/logout")
 	public String logout(HttpServletRequest req) {
 		HttpSession session = req.getSession(false);
+		System.out.println("==================logout===========");
+		System.out.println(session.getAttribute("user"));
 		if(session != null) {
 			session.invalidate();
 		}
