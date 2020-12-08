@@ -14,7 +14,7 @@
 <body>
 <br>
 <h3>Welcome</h3>  <br>
-	<h4><a href="customerlogin"> Customer Login</a></h4>
-	<h4><a href="userlogin"> User Login </a></h4>
+	<h4><a href="customerlogin">External Customer Login</a></h4>
+	<h4><a href="userlogin">Internal Bank User Login </a></h4>
 </body>
 </html>

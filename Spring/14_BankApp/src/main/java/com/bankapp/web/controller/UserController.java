@@ -21,6 +21,7 @@ import com.bankapp.model.service.UserService;
 import com.bankapp.web.formbeans.UserBean;
 
 @Controller
+@RequestMapping("app")
 public class UserController {
 	
 	private UserService userService;
@@ -37,19 +38,24 @@ public class UserController {
 	}
 	
 	@PostMapping("adduser")
-	public String addUserPost(@Valid @ModelAttribute("userBean") User userBean, BindingResult result) {
+	public String addUserPost(@Valid @ModelAttribute("userBean") User userBean, BindingResult result, HttpServletRequest req) {
 		
 		if(result.hasErrors()) {
 			System.out.println("error");
 			return "adduser";
 		} else {
 			if(userBean.getUid() == 0) {
-				userService.addUser(userBean);
+				if(!(userService.isUserExist(userBean.getUsername()))) {
+					userService.addUser(userBean);
+				} else {
+					req.setAttribute("message", "User already exists!");
+					return "adduser";
+				}
 			} else {
 				userService.updateUser(userBean.getUid(), userBean);
 			}
 			
-		return "redirect:/showallusers";
+		return "redirect:/app/showallusers";
 		}
 	}
 	
@@ -67,7 +73,7 @@ public class UserController {
 		Integer uid = Integer.parseInt(request.getParameter("id"));
 		User user = userService.getUserById(uid);
 		userService.deleteUser(user);
-		return "redirect:/showallusers";
+		return "redirect:/app/showallusers";
 	}
 	
 	@GetMapping("showallusers")

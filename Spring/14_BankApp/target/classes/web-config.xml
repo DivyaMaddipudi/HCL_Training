@@ -25,14 +25,13 @@
 	</bean>
 	<mvc:annotation-driven/>
 	
-	<!-- <mvc:interceptors>
+	<mvc:interceptors>
 	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
 		<mvc:interceptor>
-			<mvc:mapping path="/*"/>
-			<mvc:exclude-mapping path="/index"/>
-			<mvc:exclude-mapping path="/"/>
+			<mvc:mapping path="/app/*"/>
+			<mvc:exclude-mapping path="/*"/>
 			<bean class="com.bankapp.interceptors.SecurityInterceptor"></bean>
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors> 
 
 </beans>

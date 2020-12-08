@@ -27,9 +27,6 @@ a {
 	<h4><a href="addaccount"> Add Account</a></h4>
 	<h4><a href="showallaccounts">Show All Accounts</a></h4>
 	<h4><a href="showallusers">Show All Users</a></h4>
-	<h4><a href="transfer"> Transfer</a></h4>
-	<h4><a href="withdraw"> Withdraw</a></h4>
-	<h4><a href="deposit"> Deposit</a></h4>
 	<h4><a href="logout"> Logout</a></h4>
 </c:if>
 

@@ -19,6 +19,7 @@ import com.bankapp.model.dao.Account;
 import com.bankapp.model.service.AccountService;
 
 @Controller
+@RequestMapping("app")
 public class AccountManagementController {
 	
 	private AccountService accountService;
@@ -49,7 +50,7 @@ public class AccountManagementController {
 				accountService.updateAccount(addAccountBean);
 			}
 			
-		return "redirect:/showallaccounts";
+		return "redirect:/app/showallaccounts";
 		}
 	}
 	
@@ -65,7 +66,7 @@ public class AccountManagementController {
 	public String deleteAccount( HttpServletRequest request) {
 		Integer uid = Integer.parseInt(request.getParameter("id"));
 		accountService.deleteAccount(uid);
-		return "redirect:/showallaccounts";
+		return "redirect:/app/showallaccounts";
 	}
 	
 	@GetMapping("showallaccounts")

@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bankapp.model.dao.User;
 import com.bankapp.model.service.UserService;
@@ -54,7 +55,7 @@ public class LoginController {
 					session.setAttribute("user", user);
 					System.out.println("=================login==================");
 					System.out.println(session.getAttribute("user"));
-					return "redirect:/home";
+					return "redirect:/app/home";
 				} else {
 					req.setAttribute("message", "Incorrect username or password");
 					return "login";
@@ -66,7 +67,7 @@ public class LoginController {
 		}
 	}
 	
-	@GetMapping("logout")
+	@GetMapping("app/logout")
 	public String logout(HttpServletRequest req) {
 		HttpSession session = req.getSession(false);
 		System.out.println("==================logout===========");

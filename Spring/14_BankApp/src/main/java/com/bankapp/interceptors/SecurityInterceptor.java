@@ -17,8 +17,7 @@ import com.bankapp.model.dao.User;
 
 public class SecurityInterceptor extends HandlerInterceptorAdapter{
 	
-	private static final Logger logger = LoggerFactory
-			.getLogger(SecurityInterceptor.class);
+	private static final Logger logger = LoggerFactory.getLogger(SecurityInterceptor.class);
 
 	@Override
 	public boolean preHandle(HttpServletRequest request,
@@ -27,17 +26,18 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter{
 		HttpSession session = request.getSession(false);
 		boolean isValid = false; //let assume he is not valid user!
 		System.out.println("==========interceptor===================");
-		System.out.println(session.getAttribute("user"));
-		System.out.println(session.getAttribute("account"));
 		
 		if(session != null) {
 			User user = (User) session.getAttribute("user");
 			Account account = (Account) session.getAttribute("account");
 			if(user != null || account != null) {
 				isValid = true;
+				response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+				response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+				response.setDateHeader("Expires", 0);
 			} else {
 				isValid = false;
-//				response.sendRedirect("/");
+				response.sendRedirect("/14_BookApp/");
 			}
 		}
 		System.out.println(isValid);

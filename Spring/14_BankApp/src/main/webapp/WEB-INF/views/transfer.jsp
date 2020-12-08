@@ -14,19 +14,21 @@
 <h3>Transfer amount</h3>
 	<form:form action="transfer" method="post" modelAttribute="transferBean">
 		<table>
-			<c:if test="${sessionScope.user.userType == 'Admin' || sessionScope.user.userType == 'Mgr' || sessionScope.user.userType == 'Clerk'}">
-			<tr>
-				<td>Enter from account number:</td>
-				<td><form:input path="fromAccountId"/><form:errors path="fromAccountId" class="error"></form:errors></td>
-			</tr>
-			</c:if>
-			
-			<c:if test="${sessionScope.user.userType != 'Admin' || sessionScope.user.userType != 'Mgr' || sessionScope.user.userType != 'Clerk'}">
-			<tr>
-				<td>Enter from account number:</td>
-				<td><form:input path="fromAccountId" value="${sessionScope.account.accountNumber}" readonly="true"/><form:errors path="fromAccountId" class="error"></form:errors></td>
-			</tr>
-			</c:if>
+		
+			<c:choose>
+				<c:when test="${sessionScope.user.userType == 'Admin' || sessionScope.user.userType == 'Mgr' || sessionScope.user.userType == 'Clerk'}">
+					<tr>
+						<td>Enter from account number:</td>
+						<td><form:input path="fromAccountId"/><form:errors path="fromAccountId" class="error"></form:errors></td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+						<tr>
+							<td>Enter from account number:</td>
+							<td><form:input path="fromAccountId" value="${sessionScope.account.accountNumber}" readonly="true"/><form:errors path="fromAccountId" class="error"></form:errors></td>
+						</tr>
+				</c:otherwise>
+			</c:choose>
 			
 			<tr>
 				<td>Enter to account number:</td>

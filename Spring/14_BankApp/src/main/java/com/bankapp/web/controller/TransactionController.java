@@ -23,6 +23,7 @@ import com.bankapp.web.formbeans.TransferBean;
 import com.bankapp.web.formbeans.WithdrawBean;
 
 @Controller
+@RequestMapping("app")
 public class TransactionController {
 	
 	private AccountService accountService;

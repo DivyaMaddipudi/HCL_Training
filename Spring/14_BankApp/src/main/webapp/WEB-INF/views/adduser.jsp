@@ -9,7 +9,7 @@
 <link href="${pageContext.request.contextPath}/resources/css/style.css"
     rel="stylesheet">
 <style type="text/css">
-.error {
+.error,h4 {
 	color: red;
 }
 </style>
@@ -17,6 +17,7 @@
 <body>
 <br>
 <h3>Add User</h3>
+<h4>${message}</h4>
 <h4><a href="home"> Home </a></h4>
 <form:form action="adduser" method="post" modelAttribute="userBean">
 	
